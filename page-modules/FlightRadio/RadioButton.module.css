@@ -1,0 +1,15 @@
+@media only screen and (max-width: 450px) {
+    .FlightPageRadioButton {
+        padding: 7px;
+    }
+
+    .labelfontSize span {
+        font-size: 14px;
+    }
+
+    .labelfontSize svg {
+        width: 20px;
+        height: 20px;
+    }
+
+}

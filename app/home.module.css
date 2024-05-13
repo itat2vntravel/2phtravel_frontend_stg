@@ -1,0 +1,216 @@
+.bannerImage {
+  width: auto;
+  /* height: auto !important; */
+
+  height: 80vh !important;
+}
+
+.outerImage {
+  width: auto;
+  /* height: auto !important; */
+  height: 80vh !important;
+}
+
+.bgimagefull {
+  width: auto;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-size: 100% auto; */
+}
+.bgaerofull {
+  background-image: url(../public/Login/clip16.png);
+}
+.bgimagemapfull {
+  background-image: url(../public/MapBgImage.png);
+}
+
+.headingName {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.textcenter {
+  text-align: center;
+}
+
+.grey {
+  color: gray;
+}
+
+.bannertext {
+  color: black;
+  position: absolute;
+  top: 8%;
+  left: 40%;
+  /* transform: translate(-50%, -50%); */
+  color: white;
+  /* Adjust as needed */
+  /* font-size: 18px; */
+}
+
+.gap {
+  padding: 20px 0;
+}
+
+/* .MapImage {
+  height: 100% !important;
+} */
+.MapImage {
+  height: 105vh !important;
+}
+
+.loginIcon {
+  background: linear-gradient(180deg, #f23c37 20.5%, #bb140f 72%);
+
+  /* background-color: rgb(187, 20, 15); */
+  /* background-color: rgb(23, 52, 99); */
+  border-radius: 20px;
+  color: white;
+  /* padding: 10px 10px; */
+  font-size: 20px;
+  font-weight: 600;
+  width: 171px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.callbtn1 {
+  background-color: #ec2719;
+  /* background-color: rgb(23, 52, 99); */
+
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+.card {
+  border-radius: 20px;
+  width: auto;
+
+  height: auto;
+  /* border: 2px solid red; */
+  background-color: rgb(192, 205, 205, 0.8);
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+.card1 {
+  border-radius: 20px;
+  /* width: auto; */
+  width: auto;
+  height: auto;
+  /* border: 2px solid red; */
+  background-color: rgb(192, 205, 205, 0.8);
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+.dateh3 {
+  font-size: 13px;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.dflex {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+
+.bgcolor {
+  /* background-color: rgb(248, 250, 252); */
+  background-color: rgb(247, 248, 252);
+}
+
+.padding {
+  margin: 0 20px;
+}
+
+.bluetextcolor {
+  color: #152d54;
+}
+
+.customersupport {
+  background: linear-gradient(
+    90deg,
+    #344d77 3%,
+    #7ba5ed 34.5%,
+    #5279bb 68%,
+    #618fdd 100%
+  );
+}
+.flightbook {
+  margin: 20px !important;
+}
+@media only screen and (width <=1200px) {
+  .bannertext {
+    font-size: 20px;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  .flightbook {
+    margin: 20px !important;
+  }
+
+  /* .bannertext {
+    top: 3%;
+  } */
+}
+
+@media only screen and (width <=1021px) {
+  .discover {
+    padding: 10px;
+    /* border: 2px solid grey; */
+    margin: 10px 30px;
+    border: 1px solid rgba(201, 187, 187, 0.5);
+  }
+
+  .bannertext {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (width <=1000px) {
+  .card {
+    width: auto !important;
+  }
+}
+
+@media only screen and (width <=800px) {
+  .callbtn {
+    padding: 10px 10px !important;
+  }
+
+  .bgimagemapfull {
+    background-image: none;
+  }
+}
+
+@media only screen and (width <=768px) {
+  .card {
+    width: 90vw;
+  }
+}
+
+@media only screen and (width <=445px) {
+  .headingName {
+    font-size: 18px;
+  }
+
+  .flightbook {
+    margin: 20px !important;
+  }
+  .Insideimages {
+    width: 30vw;
+  }
+}

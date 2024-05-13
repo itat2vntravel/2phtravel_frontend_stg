@@ -1,0 +1,23 @@
+.flighticoncontainer {
+    width: 100px;
+    margin: 0 5px;
+}
+
+.flighticon {
+    display: inline-block;
+    animation: flyStraight 6s linear infinite;
+}
+
+@keyframes flyStraight {
+
+    0%,
+    100% {
+        transform: translateX(-100%);
+        /* Start from outside the container */
+    }
+
+    50% {
+        transform: translateX(100%);
+        /* Move to the other side of the container */
+    }
+}

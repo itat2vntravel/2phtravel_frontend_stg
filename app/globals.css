@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fontsource/sen";
+@import "@fontsource/sen/400.css";
+
+body {
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
+  font-family: "Sen";
+  /* border: 10px solid red; */
+  /* font-family: "Maven Pro", sans-serif !important; */
+  /* font-family: "Sen", sans-serif !important; */
+  /* font-optical-sizing: auto; */
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+.css-4jnixx-MuiStack-root>.MuiTextField-root {
+  width: 100%;
+}
+
+.css-o4b71y-MuiAccordionSummary-content.Mui-expanded {
+  margin: 0px !important;
+}
+
+.css-ahj2mt-MuiTypography-root {
+  font-family: "Sen" !important;
+}
+
+.PhoneInputInput {
+  background-color: #e5e7eb17 !important;
+}
+
+.css-1x2jons-MuiFormControlLabel-asterisk {
+  display: none;
+}
+
+.slick-next:before,
+.slick-prev:before {
+  color: #142d53 !important;
+}
+
+.css-az8st9-MuiDataGrid-root .MuiDataGrid-iconSeparator {
+  color: #94a3b8 !important;
+}
+
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: transparent;
+}
+
+.MuiAutocomplete-hasPopupIcon.css-1wuilmg-MuiAutocomplete-root .MuiOutlinedInput-root {
+  padding: 0px;
+}
+
+.css-wb57ya-MuiFormControl-root-MuiTextField-root {
+  padding: 4px !important;
+  /* position: relative; */
+  position: absolute !important;
+  width: 100%;
+  right: -3px;
+  top: -2px;
+  background: transparent;
+}
+
+input#country-select-demo:focus-visible {
+  border: none;
+  outline: none;
+}
+
+input#country-select-demo:hover {
+  border: none;
+  outline: none;
+}
+
+.PhoneInputInput:focus-visible {
+  border: none;
+  outline: none;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  background-color: #142d53 !important;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #arrowbutton * {
+    visibility: hidden;
+  }
+
+  #printContent,
+  #printContent * {
+    visibility: visible;
+  }
+
+  #printContent {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+  }
+
+
+}

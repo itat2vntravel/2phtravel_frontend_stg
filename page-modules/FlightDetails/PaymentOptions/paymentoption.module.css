@@ -1,0 +1,21 @@
+.cardImage {
+  width: 40px !important;
+  height: 40px !important;
+}
+.passengerheading {
+  padding: 12px;
+  background-color: darkgray;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.cardImagePayment {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.cardShadow {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}

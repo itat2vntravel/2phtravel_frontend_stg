@@ -1,0 +1,7 @@
+.imagebackground {
+  height: 20vh;
+  width: 100%;
+  background-color: #d3f2ff;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,28 @@
+.inputfields {
+  background: rgb(255, 255, 255);
+  opacity: 1;
+}
+::-ms-input-placeholder {
+  /* Edge 12-18 */
+  color: grey;
+  border: 2px solid red;
+}
+
+.main input::placeholder {
+  color: grey;
+  /* border: 2px solid blue; */
+  /* padding-top: 50px; */
+  /* background-color: red; */
+}
+/* .main input[type="date"]::-webkit-datetime-edit-text {
+  color: grey;
+} */
+.main input[type="date"]::-webkit-datetime-edit-month-field {
+  color: grey;
+}
+.main input[type="date"]::-webkit-datetime-edit-day-field {
+  color: grey;
+}
+.main input[type="date"]::-webkit-datetime-edit-year-field {
+  color: grey;
+}

@@ -1,0 +1,8 @@
+.footer {
+  border: none;
+}
+@media only screen and (width <= 767px) {
+  .footer {
+    border-bottom: 2px solid grey;
+  }
+}

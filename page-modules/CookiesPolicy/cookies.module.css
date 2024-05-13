@@ -1,0 +1,10 @@
+.cardShadow {
+  box-shadow: 0 0 7px #cccccc57 !important;
+  border-radius: 10px;
+}
+.paddingcontainer {
+  padding: 8px 20px;
+}
+.cardShadow a:hover {
+  color: #ec2719;
+}

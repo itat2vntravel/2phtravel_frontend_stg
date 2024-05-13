@@ -1,0 +1,91 @@
+.rnProgressParent {
+  position: fixed;
+  right: 90px;
+  bottom: 15px;
+
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 1px #f8e3c3;
+  z-index: 10000;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+/* .banner {
+  position: fixed;
+  left: 90px;
+  bottom: 15px;
+
+  height: 100x;
+  width: 300px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 1px #f8e3c3;
+  z-index: 10000;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+} */
+
+.banner {
+  position: fixed;
+  left: 90px;
+  bottom: 90px;
+  height: 100px; /* Fix typo in height unit */
+  width: 300px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 1px #f8e3c3;
+  /* z-index: 10000; */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(100%);
+  animation: slideUp 2.5s forwards; /* Adjust animation duration */
+  /* animation-delay: 30s; */
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.rnProgressParentpayment {
+  position: fixed;
+  /* right: 30px;
+  bottom: 90px; */
+  right: 30px;
+  bottom: 15px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 1px #f8e3c3;
+  z-index: 10000;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+@media only screen and (width <= 768px) {
+  .rnProgressParent {
+    bottom: 0px;
+  }
+  .rnProgressParentpayment {
+    bottom: 0px;
+  }
+}

@@ -1,0 +1,44 @@
+.contactAddressCard2 {
+  /* border-radius: 5px;
+  padding: 25px;
+  margin-top: 10px;
+  text-align: center;
+  transition: 0.4s; */
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* .contactAddressCard2:hover {
+  transform: translateY(-15px);
+} */
+
+.phoneinput input {
+  border: none;
+  outline: none;
+}
+
+.phonenumber input {
+  background: #f4f4f4 !important;
+  outline: none !important;
+  border: none !important;
+}
+
+@media only screen and (width <=920px) {
+  .quotepopupstyle {
+    overflow-y: auto !important;
+    max-height: 480px !important;
+  }
+}
+@media only screen and (height <=700px) {
+  .quotepopupstyle {
+    overflow-y: auto !important;
+    max-height: 480px !important;
+  }
+}
+@media only screen and (height <=800px) {
+  .quotepopupMulticitystyle {
+    overflow-y: auto !important;
+    max-height: 560px !important;
+  }
+}

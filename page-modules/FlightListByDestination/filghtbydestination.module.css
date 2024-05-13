@@ -1,0 +1,10 @@
+.paddingcontainer {
+  padding: 8px 20px;
+}
+.bgimage {
+  width: auto;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

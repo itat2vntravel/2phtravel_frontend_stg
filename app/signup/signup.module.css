@@ -1,0 +1,19 @@
+.main {
+  height: auto;
+}
+
+@media screen and (max-height: 945px) {
+  .main {
+    height: 100vh !important;
+  }
+}
+@media screen and (max-height: 750px) {
+  .main {
+    height: auto !important;
+  }
+}
+@media screen and (max-height: 600px) {
+  .content {
+    height: auto !important;
+  }
+}

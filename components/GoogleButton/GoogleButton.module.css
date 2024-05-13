@@ -1,0 +1,21 @@
+.buttonStyle {
+    background-color: #3966af !important;
+    color: white !important;
+    border-radius: 4px !important;
+    height: 40px !important;
+    font-size: 18px !important;
+}
+
+.buttonStyle div {
+    width: 38px !important;
+    height: 38px !important;
+    margin: 2px;
+    background-color: transparent !important;
+}
+
+.buttonStyle div svg {
+    width: 30px !important;
+    height: 30px !important;
+    /* background-color: #fff; */
+    transform: scale(1);
+}

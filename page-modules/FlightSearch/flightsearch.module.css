@@ -1,0 +1,95 @@
+.commoncard {
+  padding: 5px 10px;
+  box-sizing: border-box;
+
+  /* margin-right: 30px; */
+}
+.commoncardLoader {
+  padding: 5px 10px;
+  box-sizing: border-box;
+  width: 900px !important;
+}
+
+.inputfields {
+  background: rgb(255, 255, 255);
+  opacity: 1;
+}
+
+.margin {
+  margin: 5px;
+}
+
+.marginTop {
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.origin {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.dflex {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  /* align-items: center; */
+  /* margin-top: 20px; */
+}
+
+.advancedsearch {
+  margin-top: 15px;
+  margin-left: 5px;
+}
+
+.font {
+  font-size: 13px;
+}
+
+.buttonstyle {
+  /* background-color: rgb(187, 20, 15); */
+  opacity: 1;
+  border-radius: 20px;
+  color: white;
+}
+
+.buttonstyle:hover {
+  color: black;
+  background-color: rgb(187, 20, 15);
+}
+
+.phoneinput input {
+  border: none;
+  outline: none;
+}
+
+.phonenumber input {
+  background: #f4f4f4 !important;
+  outline: none !important;
+}
+
+/* .datepciker > div:first-child {
+  position: static !important;
+} */
+/* .datepciker {
+  background-color: red;
+} */
+.inputdatepicker ~ div {
+  z-index: 99999 !important;
+}
+
+@media only screen and (width <=1800px) {
+  .commoncardLoader {
+    width: 800px !important;
+  }
+}
+@media only screen and (width <=767px) {
+  .dflex {
+    display: none !important;
+  }
+  .commoncardLoader {
+    padding: 5px 10px;
+    box-sizing: border-box;
+    width: auto !important;
+  }
+}

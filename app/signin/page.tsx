@@ -17,9 +17,9 @@ const GoogleSignInButton = dynamic(
 export default function LoginPage() {
   return (
     <div
-      className={`h-screen ${Styles.content} bg-[url('/Login/skyflight.png')] flex justify-center items-center bg-cover overflow-auto`}
+      className={`h-screen ${Styles.content}  flex justify-center items-center bg-cover overflow-auto`}
     >
-      <div className="bg-[#ffffffd2]  lg:w-2/5 2xl:h-auto	 m-5 rounded-md  p-5">
+      <div className="bg-[#ffffffd2]  lg:w-2/5 2xl:h-auto	m-5 rounded-md  p-5 border-2 border-[#182c51]">
         <div className="flex justify-center">
           <Image
             src={Logo}

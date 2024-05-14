@@ -11,9 +11,9 @@ import Styles from "@/app/signup/signup.module.css";
 export default function SignupPage() {
   return (
     <div
-      className={`${Styles.main} bg-[url('/Login/skyflight.png')] bg-cover flex justify-center items-center`}
+      className={`${Styles.main} bg-cover flex justify-center items-center`}
     >
-      <div className="bg-[#ffffffd2] lg:w-2/5 m-5 rounded-md p-5">
+      <div className="bg-[#ffffffd2] lg:w-2/5 m-5 rounded-md p-5 border-2 border-[#182c51]">
         <div className="flex justify-center">
           <Image
             src={Logo}

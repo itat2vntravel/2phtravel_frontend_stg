@@ -12,6 +12,19 @@ const Newsletter = () => {
 
   return (
     <>
+          <div
+        // className={`${Styles.backgroundimageremember} ${Styles.bgimagefull} p-3`}
+        className="bg-customBlue p-3"
+      >
+        <div className="flex flex-col justify-center items-center p-0 md:p-10">
+          <div className="text-white font-bold text-center text-md md:text-4xl my-5">
+            Are You Ready To Travel? Remember Us !!{" "}
+          </div>
+          <div className=" text-white text-center max-w-2xl  text-xs md:text-base">
+            {`We're committed to making your travel experience seamless and unforgettable. So, buckle up and let's embark on this journey together. Don't miss out on exclusive offers, travel deals, and updates by subscribing to our newsletter on our website. Follow us on social media for daily travel inspiration, tips, and giveaways.`}
+          </div>
+         
+     
       <form
         ref={ref}
         action={async (formData) => {
@@ -38,6 +51,8 @@ const Newsletter = () => {
           <NewsletterButton>Subscribe Us</NewsletterButton>
         </div>
       </form>
+      </div>
+      </div>
     </>
   );
 };

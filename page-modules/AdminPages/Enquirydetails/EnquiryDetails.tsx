@@ -125,15 +125,6 @@ const EnquiryDetails: React.FC<BookingInterace> = ({ userdata }) => {
       }
 
       if (startPage < 1) {
-        // paginationItems.push(
-        //   <button
-        //     key="first"
-        //     onClick={goToFirstPage}
-        //     className="mx-1 px-3 py-1  rounded-[10px]  border-[#DCDCDC] border-[2px]"
-        //   >
-        //     1
-        //   </button>
-        // );
         if (startPage > 2) {
           paginationItems.push(
             <span
@@ -353,6 +344,7 @@ const EnquiryDetails: React.FC<BookingInterace> = ({ userdata }) => {
                   height={100}
                   alt="loader"
                   className="w-[950px] h-[450px]  rounded-full"
+                  unoptimized
                 />
               </div>
             ) : (

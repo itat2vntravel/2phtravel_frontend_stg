@@ -5,8 +5,6 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Styles from "./paymentoption.module.css";
 import Image from "next/image";
 import FooterpPayment from "@/public/FooterpPayment1.png";
-import CardpaymentApi from "@/action/booknow/Cardpayment";
-import useBookingInfo from "@/store/FlightBooking";
 import { PulseLoader } from "react-spinners";
 import { useRouter, useSearchParams } from "next/navigation";
 import Swal from "sweetalert2";
@@ -93,7 +91,6 @@ const CustomTextField: FC<CustomTextFieldProps> = ({
             type={type}
             name={name}
             autoComplete="off"
-            // className="bg-white mb-4 rounded-lg p-3 focus:outline-none border border-gray-500"
             placeholder={placeholder}
             required={required}
             disabled={readonly}
@@ -106,8 +103,6 @@ const CustomTextField: FC<CustomTextFieldProps> = ({
               padding: "10px",
             }}
             readOnly
-            // placeholder={"Cardholder name"}
-            // required
           />
         </div>
       </div>
@@ -131,14 +126,10 @@ const Paymentandagree: FC<DataType> = () => {
       const booktoken = searchParams.get("token") as string;
       try {
         const response = await Getbookflightnow(booktoken);
-        // console.log("booking_info", response.booking_info.flight_info);
-
         setCardInfoData(response.card_info);
         setBookingInfoData(response.booking_info);
         setPassengerInfoData(response.passenger_info);
         setloading(false);
-        // setData(response.)
-        // return response;
       } catch (error) {
         console.error("Booking search failed:", error);
 
@@ -159,21 +150,9 @@ const Paymentandagree: FC<DataType> = () => {
       if (signatureFile) {
         CardPayment();
       } else {
-        // Swal.fire({
-        //   icon: "error",
-        //   title: "Signature/Signature Text",
-        //   text: "You prefer credit card payments with a signature required or Enter the Signature Text",
-        // });
-
         setloading(false);
       }
     } else {
-      // Swal.fire({
-      //   icon: "error",
-      //   title: "Terms and Condition",
-      //   text: "Please make sure  agree to the terms and conditions by checking the checkbox ",
-      // });
-
       setloading(false);
     }
   };
@@ -188,7 +167,7 @@ const Paymentandagree: FC<DataType> = () => {
     }
 
     const response = await SignatureAPI(formData);
-    // console.log("response", response);
+
     if (response.message) {
       setloading(false);
 
@@ -203,13 +182,6 @@ const Paymentandagree: FC<DataType> = () => {
       });
     }
 
-    // if (response.error) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Error",
-    //     text: response.error,
-    //   });
-    // }
   };
   const handleChange = () => {
     setIsChecked(!isChecked);
@@ -371,11 +343,6 @@ const Paymentandagree: FC<DataType> = () => {
                           required={true}
                           value={CardInfoData?.card_holder_name}
                         />
-                        {/* {errorMessage && !card_holder_name && (
-                      <p className="text-red-600">
-                        Please Enter Card Holder Name
-                      </p>
-                    )} */}
                       </div>
                     </div>
                   </div>
@@ -386,18 +353,6 @@ const Paymentandagree: FC<DataType> = () => {
                   </div>
                   <div className="px-10 py-6">
                     <div className="grid grid-cols-12 gap-4 ">
-                      {/* <div className="  md:col-span-4 col-span-12">
-                  <CustomTextField
-                    labeltext="Customer ID"
-                    type="text"
-                    name="Customer ID"
-                    placeholder="Customer ID"
-                    required={true}
-                    value="GTg112"
-                  />
-                  
-                </div> */}
-
                       <div className="    md:col-span-4 col-span-12">
                         <CustomTextField
                           labeltext="authorized_amount"
@@ -583,96 +538,6 @@ const Paymentandagree: FC<DataType> = () => {
                     <SignaturePad onSave={handleSave} />
                   </div>
                 </div>
-
-                {/* <div className="  md:col-span-6 col-span-12 mt-6 mb-3">
-              <CustomTextField
-                labeltext="Card Holder Signature (Click on other Signature options to type Sign): 
-                "
-                type="text"
-                name="signatureText"
-                placeholder="Enter Signature"
-                value={formData.signatureText || signatureText}
-                onChange={handleInputChange("signatureText")}
-              />
-              {errorMessage && !signatureText && (
-                <p className="text-red-600">Please Enter signatureText</p>
-              )}
-            </div> */}
-                {/* <p>
-              <b>Note:</b> The airline may need certain papers from us for
-              security and authentication reasons. If these papers are not
-              submitted, the reservation may be automatically canceled. Any
-              modifications or cancellations after the trip has been paid for
-              may incur fees.
-            </p> */}
-
-                {/* <div className="mt-6 mb-6">
-              <h1 style={{ color: "red" }}>
-                DISCLAIMER, CANCELLATION AND AMENDMENT
-              </h1>
-              <div className="p-5">
-                <ol style={{ listStyle: "auto" }}>
-                  <li>
-                    {" "}
-                    Fares are not guaranteed until tickets have been issued.
-                  </li>
-                  <li>Ticket is non-transferable.</li>
-                  <li>Name correction is subject to airline’s policy.</li>
-                  <li>Penalty and fees apply to the following:</li>
-                  <ol style={{ listStyle: "auto", marginLeft: "20px" }}>
-                    <li>
-                      Change in travel date(s) based on flight availability at
-                      the time of change;
-                    </li>
-                    <li>
-                      Change in travel date(s) after departure, which must be
-                      done by the airline directly (airline penalty plus any
-                      fare difference will apply and is based on availability of
-                      flight at the time of change);
-                    </li>
-                    <li>
-                      The majority of airlines have a no-show fee, applies for
-                      confirmed bookings not cancelled 24 hours prior original
-                      flight departure
-                    </li>
-                  </ol>
-                  <li>If seats are selected</li>
-                  <ol style={{ listStyle: "auto", marginLeft: "20px" }}>
-                    <li>
-                      Seats are non-refundable, non-rebookable and
-                      non-transferable.
-                    </li>
-                    <li>
-                      For voluntary seat changes, the current seats paid for
-                      will automatically be forfeited
-                    </li>
-                    <li>
-                      If flight schedule/aircraft changes, seat position is
-                      subject for displacement
-                    </li>
-                  </ol>
-                  <li>
-                    For necessary changes in your flight details, contact our
-                    24/7 customer .
-                  </li>
-                  <li>
-                    Before agreeing to our Terms and Conditions, don’t forget to
-                    review our service fees for exchanges, changes, refunds, and
-                    cancellations.
-                  </li>
-                </ol>
-              </div>
-              <h3 className="flex justify-center">
-                <b>Terms and Conditions and Credit Card Authorization</b>
-              </h3>
-              <FormControlLabel
-                required
-                control={<Checkbox />}
-                onChange={handleChange}
-                name="checkboxstatus"
-                label={`I have read and agreed to the Terms and Conditions, Fare Rules and Restrictions of this booking engine. International flights require special Travel documentation for each traveler. I hereby authorize the total amount USD ${totalPrice}* be applied to the credit card. I understand that this serves as my legal signature.`}
-              />
-            </div> */}
                 <div>
                   <button
                     className="bg-customBlue text-white p-2 mt-[20px] w-full rounded-md"

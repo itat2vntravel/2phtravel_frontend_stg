@@ -19,7 +19,7 @@ const MenuItems: FC<MenuProps> = ({ title, color, disabled, options }) => {
     : "black";
   const selectedTheme = router.includes("/cabin") ? "#EC2719" : "black";
   const selectedFlights = router == "/" ? "#EC2719" : "black";
-  const selectedHelpSupport = router.includes("/help-support")
+  const selectedHelpSupport = router.includes("/guidance")
     ? "#EC2719"
     : "black";
   return (

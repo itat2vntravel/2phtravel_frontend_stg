@@ -246,15 +246,6 @@ const AdminDashborad: React.FC<BookingInterace> = ({ bookingData }) => {
       }
 
       if (startPage < 1) {
-        // paginationItems.push(
-        //   <button
-        //     key="first"
-        //     onClick={goToFirstPage}
-        //     className="mx-1 px-3 py-1  rounded-[10px]  border-[#DCDCDC] border-[2px]"
-        //   >
-        //     1
-        //   </button>
-        // );
         if (startPage > 2) {
           paginationItems.push(
             <span
@@ -585,11 +576,6 @@ const AdminDashborad: React.FC<BookingInterace> = ({ bookingData }) => {
                 >
                   All Booking Data
                 </button>
-                {/* <DownLoadButton
-                        type="button"
-                        text="All UserData"
-                        userdata={userdata}
-                      /> */}
               </div>
             </div>
           </MenuItem>
@@ -721,12 +707,6 @@ const AdminDashborad: React.FC<BookingInterace> = ({ bookingData }) => {
                             card: res.card,
                             payment_type: res.payment_type,
                           });
-                          // setSelectedName(res.contact_name);
-                          // setSelectedPage(res.page);
-                          // setResponseData(res);
-                          // setSelectedTrips(res.trip_info);
-                          // setBookingDate(res.created_at);
-                          // handleInfoModal();
                         }}
                         href={`/admin/bookingDetails/${res.booking_code}`}
                       >
@@ -800,117 +780,6 @@ const AdminDashborad: React.FC<BookingInterace> = ({ bookingData }) => {
             loading={loading}
           />
         )}
-        {/* {TripInfo && (
-          // <Dialog
-          //   open={TripInfo}
-          //   onClose={() => {
-          //     router.push("/admin/dashboard");
-          //     setTripInfo(false);
-          //   }}
-          //   aria-labelledby="alert-dialog-title"
-          //   aria-describedby="alert-dialog-description"
-          // >
-          //   <DialogTitle
-          //     id="alert-dialog-title"
-          //     className="flex items-center justify-between"
-          //   >
-          //     Booking Trip Information
-          //     <CloseIcon
-          //       className="cursor-pointer"
-          //       onClick={() => {
-          //         router.push("/admin/dashboard");
-          //         setTripInfo(false);
-          //       }}
-          //     />
-          //   </DialogTitle>
-          //   <hr></hr>
-          //   <div className="p-5">
-          //     <h4 className="mb-1">
-          //       <b>User: </b>
-          //       {selectedName}
-          //     </h4>
-          //     <h4 className="mb-1">
-          //       <b>Enquired Date: </b>
-          //       {bookingDate.split("T")[0]}
-          //     </h4>
-          //     {responseData?.trip_type && (
-          //       <h4 className="mb-1">
-          //         <b>Trip Type: </b>
-          //         {responseData?.trip_type}
-          //       </h4>
-          //     )}
-          //     <h4 className="mb-1">
-          //       <b>CheckOut: </b>
-          //       {selectedPage}
-          //     </h4>
-          //     {responseData?.airline_name && (
-          //       <h4 className="mb-1">
-          //         <b>Selected Airline: </b>
-          //         {responseData?.airline_name}
-          //       </h4>
-          //     )}
-
-          //     {SelectedTrips.length > 0 && SelectedTrips ? (
-          //       SelectedTrips?.map((trip: any, tripindex: number) => (
-          //         <div key={tripindex}>
-          //           <div className="grid grid-cols-3 h-full border p-4 mt-3">
-          //             <div className="flex flex-col justify-center ">
-          //               <h4 className="font-semibold">Start From</h4>
-
-          //               <p>{trip.departure}</p>
-          //               <p>
-          //                 {trip.date.length >= 11
-          //                   ? trip.date.substring(0, 10)
-          //                   : trip.date}
-          //               </p>
-          //             </div>
-          //             <div className="flex text-[#BDBDBD] text-[15px]  justify-center items-center gap-[1px]">
-          //               <h1>------------------</h1>
-          //               <MdOutlineFlight className="rotate-90 mt-[2px]" />
-          //             </div>
-          //             <div className="mx-2 flex flex-col justify-center text-end">
-          //               <h4 className="font-semibold">To</h4>
-          //               <p>{trip.destination}</p>
-          //               <p>
-          //                 {trip.date.length >= 11
-          //                   ? trip.date.substring(13)
-          //                   : trip.date}
-          //               </p>
-          //             </div>
-          //           </div>
-          //         </div>
-          //       ))
-          //     ) : (
-          //       <div>
-          //         <div className="grid grid-cols-3 h-full border p-4">
-          //           <div className="flex flex-col justify-center ">
-          //             <h4 className="font-semibold">Start From</h4>
-          //             <p>{(SelectedTrips as any).departure}</p>
-          //             <p>
-          //               {" "}
-          //               {(SelectedTrips as any).date.length >= 11
-          //                 ? (SelectedTrips as any).date.substring(0, 10)
-          //                 : (SelectedTrips as any).date}
-          //             </p>
-          //           </div>
-          //           <div className="flex text-[#BDBDBD] text-[15px]  justify-center items-center gap-[1px]">
-          //             <h1>------------------</h1>
-          //             <MdOutlineFlight className="rotate-90 mt-[2px]" />
-          //           </div>
-          //           <div className="mx-2 flex flex-col justify-center text-end">
-          //             <h4 className="font-semibold">To</h4>
-          //             <p>{(SelectedTrips as any).destination}</p>
-          //             {(SelectedTrips as any).date.length >= 11
-          //               ? (SelectedTrips as any).date.substring(11)
-          //               : (SelectedTrips as any).date}
-          //           </div>
-          //         </div>
-          //       </div>
-          //     )}
-          //   </div>
-          // </Dialog>
-          <BookingDetails />
-        )} */}
       </div>
       <Toaster />
     </>

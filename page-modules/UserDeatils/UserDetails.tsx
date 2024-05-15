@@ -237,10 +237,6 @@ const UserDashboard: React.FC<BookingInterace> = ({
     )
     .filter((user) => {
       if (Datevalue?.startDate && Datevalue.endDate) {
-        // const userDate = new Date(user.created_at);
-        // const startDate = new Date(Datevalue.startDate);
-        // const endDate = new Date(Datevalue.endDate);
-        // return userDate >= startDate && userDate <= endDate;
         const userDate = new Date(user.created_at);
         const startDate = new Date(Datevalue.startDate);
         const endDate = new Date(Datevalue.endDate);
@@ -332,17 +328,14 @@ const UserDashboard: React.FC<BookingInterace> = ({
 
   const goToPage = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    // router.push(`?page=${pageNumber}`);
   };
 
   const goToPreviousPage = () => {
     setCurrentPage((prevPage) => prevPage - 1);
-    // router.push(`?page=${currentPage - 1}`);
   };
 
   const goToNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
-    // router.push(`?page=${currentPage + 1}`);
   };
   const goToFirstPage = () => {
     setCurrentPage(1);
@@ -440,15 +433,7 @@ const UserDashboard: React.FC<BookingInterace> = ({
       }
 
       if (startPage < 1) {
-        // paginationItems.push(
-        //   <button
-        //     key="first"
-        //     onClick={goToFirstPage}
-        //     className="mx-1 px-3 py-1  rounded-[10px]  border-[#DCDCDC] border-[2px]"
-        //   >
-        //     1
-        //   </button>
-        // );
+
         if (startPage > 2) {
           paginationItems.push(
             <span
@@ -558,11 +543,6 @@ const UserDashboard: React.FC<BookingInterace> = ({
         <div className="mb-8">
           <div className="flex justify-between flex-wrap items-center">
             <h1 className="mb-7 md:mb-4"> User Details Histroy</h1>
-            {/* <div className="flex gap-2 flex-wrap items-end  h-[40px]">
-              <h1 className="hidden lg:block">Choose & download:</h1>
-
-              
-            </div> */}
             <div
               className="relative inline-block text-left"
               onMouseEnter={openMenu}
@@ -653,14 +633,6 @@ const UserDashboard: React.FC<BookingInterace> = ({
                   <option value="EMAIL">EMAIL </option>
                 </select>
               </div>
-              {/* {search !== "" ? (
-                <MdClear
-                  className="text-red-600"
-                  onClick={() => setSearch("")}
-                />
-              ) : (
-                <></>
-              )} */}
             </div>
           </div>
         </div>
@@ -671,10 +643,6 @@ const UserDashboard: React.FC<BookingInterace> = ({
             columns={columns}
             hideFooterPagination
             hideFooter
-            // pagination={false || undefined}
-            // rowModesModel={false || undefined}
-            // rowCount={false || undefined}
-            // onPaginationModelChange={false || undefined}
           />
         </div>
         <div className="mt-3 mb-5 flex flex-wrap justify-center">
@@ -716,33 +684,6 @@ const UserDashboard: React.FC<BookingInterace> = ({
         </div>
 
         {deleteOpen && (
-          // <Dialog
-          //   open={deleteOpen}
-          //   onClose={() => setDeleteOpen(false)}
-          //   aria-labelledby="alert-dialog-title"
-          //   aria-describedby="alert-dialog-description"
-          // >
-          //   <DialogTitle id="alert-dialog-title">
-          //     {"Are you sure you want to Delete?"}
-          //   </DialogTitle>
-
-          //   <DialogActions>
-          //     <Button
-          //       onClick={() => setDeleteOpen(false)}
-          //       className=" border-[#142B51] border-solid text-[#142B51] flex gap-[5px] justify-center rounded-md items-center w-[20%]"
-          //     >
-          //       NO
-          //     </Button>
-          //     <Button
-          //       onClick={DeleteBannerApi}
-          //       className=" flex hover:bg-red-500 gap-[5px] justify-center rounded-md items-center bg-[#142B51] text-white border-none w-[20%]"
-          //       variant="contained"
-          //       style={{ background: "#142B51" }}
-          //     >
-          //       {loading ? <PulseLoader color="white" /> : "Yes"}
-          //     </Button>
-          //   </DialogActions>
-          // </Dialog>
           <ModalPopup
             open={deleteOpen}
             setopen={setDeleteOpen}

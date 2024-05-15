@@ -101,13 +101,6 @@ export default function UserLoginAuth() {
             Forgot password
           </Link>
         </div>
-        {/* <input
-          type="password"
-          name="password"
-          className="w-full bg-white mb-4 rounded-md p-3 focus:outline-none border border-gray-500 "
-          placeholder="Enter your Password"
-          required
-        /> */}
 
         {/* Keep me logged in checkbox  */}
         <div>

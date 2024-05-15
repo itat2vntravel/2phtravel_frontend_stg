@@ -43,7 +43,7 @@ const AdminHeader: React.FC<AdminHeaderProps> = ({
     },
     {
       title: "Top Airline",
-      url: "/admin/airline",
+      url: "/admin/airline-offers",
       icon: <GiRocketFlight className="text-lg" />,
     },
     {

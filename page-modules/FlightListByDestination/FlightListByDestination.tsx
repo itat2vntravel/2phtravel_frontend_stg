@@ -27,8 +27,8 @@ import Styles from "./filghtbydestination.module.css";
 interface FlightInterface {
   logo: any;
   title: string;
-  about: string;
-  url: string;
+  // about: string;
+  // url: string;
 }
 
 const FlightListByDestination = ({ heroBanner }: any) => {
@@ -123,54 +123,33 @@ const FlightListByDestination = ({ heroBanner }: any) => {
   const flightlist: FlightInterface[] = [
     {
       logo: Asiana,
-      title: "Asiana Airline",
-      about:
-        "Asiana Airlines Inc. is a South Korean airline headquartered in Seoul. In 2019, it accounted for 25% of South Korea's international aviation market and 20% of its domestic market.",
-      url: "/bookflights",
+      title: "Asiana Airline"
     },
 
     {
       logo: korean,
-      title: "Korean Air",
-      about:
-        "Korean Air Lines Co., Ltd., operating as Korean Air, is the flag carrier of South Korea and its largest airline based on fleet size, international destinations, and international flights. ",
-      url: "/bookflights",
+      title: "Korean Air"
     },
     {
       logo: United,
-      title: "United Airline",
-      about:
-        "United Airlines, Inc. is a major American airline headquartered at the Willis Tower in Chicago, Illinois.",
-      url: "/bookflights",
+      title: "United Airline"
     },
 
     {
       logo: china,
-      title: "China Airline",
-      about:
-        "United Airlines, Inc. is a major American airline headquartered at the Willis Tower in Chicago, Illinois.",
-      url: "/bookflights",
+      title: "China Airline"
     },
     {
       logo: Singapore,
-      title: "Singpore Airline",
-      about:
-        "United Airlines, Inc. is a major American airline headquartered at the Willis Tower in Chicago, Illinois.",
-      url: "/bookflights",
+      title: "Singpore Airline"
     },
     {
       logo: Philippine,
-      title: "Philippine Airline",
-      about:
-        "Philippine Airlines is the flag carrier of the Philippines. Headquartered at the PNB Financial Center in Pasay, the airline was founded in 1941 and is the oldest operating commercial airline in Asia.",
-      url: "/bookflights",
+      title: "Philippine Airline"
     },
     {
       logo: Eva,
-      title: "Eva Air",
-      about:
-        "EVA Airways Corporation is a Taiwanese airline headquartered in Taoyuan City. It is one of the two largest airlines in Taiwan along with state-owned China Airlines.",
-      url: "/bookflights",
+      title: "Eva Air"
     },
   ];
   const handlebooking = (res: {
@@ -238,16 +217,11 @@ const FlightListByDestination = ({ heroBanner }: any) => {
                 {flightlist.map((value, i) => (
                   <div
                     key={i}
-                    // onClick={() => navigate.push(value.url)}
                   >
                     <div className=" flex bg-white rounded-[10px] items-center justify-center m-5 p-4 z-0">
                       <Image
                         src={value.logo}
                         alt="image"
-                        // width={1000000000000}
-                        // height={200}
-                        // // className="w-[150px] h-[140px] m-5 p-5  rounded-[10px] mix-blend-multiply"
-                        // className="h-[60px] p-2  mix-blend-multiply"
                         width={1000000}
                         height={200}
                         className="w-[100%] mix-blend-multiply h-[80px] bg-customWhite rounded-[10px] "
@@ -380,6 +354,7 @@ const FlightListByDestination = ({ heroBanner }: any) => {
                   height={100}
                   alt="loader"
                   className="w-[150px] h-[150px]  rounded-full"
+                  unoptimized
                 />
               </div>
             ) : (

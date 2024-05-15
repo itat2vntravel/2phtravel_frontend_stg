@@ -122,19 +122,6 @@ const FilghtDetails: FC<FilghtDetailsSummaryProps> = ({
                     </div>
                   </div>
                   <div className="grid grid-cols-12" key={index}>
-                    {/* <div className="col-span-12 md:col-span-2">
-                        <h1 className="text-[15px] md:text-[16px] text-customBlue">
-                          Flight :{Segment.airlineCode} {""}
-                          {Segment.flightNumber}
-                        </h1>
-                        <h4 className="flex font-semibold items-center gap-2 capitalize text-customBlue  ">
-                          {cabin === "E"
-                            ? "Economy"
-                            : cabin === "F"
-                            ? "First Class"
-                            : "Business"}
-                        </h4>
-                      </div> */}
                     <div className="col-span-12 md:col-span-3 flex mx-2">
                       <div className="flex flex-col ">
                         <h4 className="text-[14px] md:text-[15px]">
@@ -144,30 +131,12 @@ const FilghtDetails: FC<FilghtDetailsSummaryProps> = ({
                           {formatTime(Segment.departureTime)}
                         </h4>
                         <p className="text-[12px]">
-                          {/* {Segment.departureAirportCode} */}
                           {
                             airports.find(
                               (airport) =>
                                 airport.iata === Segment.departureAirportCode
                             )?.name
                           }
-                          {/* [{Segment.departureAirportCode}] */}
-                          {/* {airports.find(
-                              (airport) =>
-                                airport.iata === Segment.departureAirportCode
-                            )?.city === "Angeles City"
-                              ? "Pampanga (Clark)"
-                              : airports.find(
-                                  (airport) =>
-                                    airport.iata ===
-                                    Segment.departureAirportCode
-                                )?.city === "Madras"
-                              ? "Chennai"
-                              : airports.find(
-                                  (airport) =>
-                                    airport.iata ===
-                                    Segment.departureAirportCode
-                                )?.city} */}
                         </p>
                         <h4 className="text-[14px]  md:text-[15px]">
                           {Segment.departureAirportCode}
@@ -183,13 +152,6 @@ const FilghtDetails: FC<FilghtDetailsSummaryProps> = ({
                           <h1 className="mt-0 text-center  text-[14px] md:text-[15px] leading-[21.66px]">
                             {convertMinutesToHours(Segment.duration)}
                           </h1>
-                          {/* <h1 className="text-[#BDBDBD] text-[12px] md:text-[16px]">
-                              {trip?.segments.length.toString() === "1"
-                                ? "Non-stop"
-                                : trip?.segments.length.toString() === "2"
-                                ? "1 Stop"
-                                : "2 Stops or More"}
-                            </h1> */}
                         </div>
                         <div className="flex text-[#BDBDBD] text-[15px]  justify-center items-center gap-[1px]">
                           <h1>-------</h1>
@@ -212,27 +174,6 @@ const FilghtDetails: FC<FilghtDetailsSummaryProps> = ({
                                 airport.iata === Segment.arrivalAirportCode
                             )?.name
                           }
-                          {/* {Segment.arrivalAirportCode} */}
-                          {/* {
-                              airports.find(
-                                (airport) =>
-                                  airport.iata === Segment.arrivalAirportCode
-                              )?.city
-                            } */}
-                          {/* {airports.find(
-                              (airport) =>
-                                airport.iata === Segment.arrivalAirportCode
-                            )?.city === "Angeles City"
-                              ? "Pampanga (Clark)"
-                              : airports.find(
-                                  (airport) =>
-                                    airport.iata === Segment.arrivalAirportCode
-                                )?.city === "Madras"
-                              ? "Chennai"
-                              : airports.find(
-                                  (airport) =>
-                                    airport.iata === Segment.arrivalAirportCode
-                                )?.city} */}
                         </p>
                         <h4 className="text-[14px] md:text-[15px]">
                           {Segment.arrivalAirportCode}
@@ -290,7 +231,6 @@ const FilghtDetails: FC<FilghtDetailsSummaryProps> = ({
               ))}
             </div>
           ))}
-          {/* <hr /> */}
         </AccordionDetails>
       </Accordion>
     </>

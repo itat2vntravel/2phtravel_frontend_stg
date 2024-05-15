@@ -73,12 +73,6 @@ const AdminFormData = () => {
           placeholder="Enter your Password *"
         />
         <br></br>
-        {/* <button
-          className="bg-[#3966af] text-white p-2  w-40 rounded-md"
-          type="submit"
-        >
-          Login
-        </button> */}
         <div className="w-40 m-0">
           <FormButton>Login</FormButton>
         </div>

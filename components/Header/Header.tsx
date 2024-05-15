@@ -8,10 +8,7 @@ import LoginIcon from "@mui/icons-material/Login";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuItems from "../Menu/MenuItems";
 import { MdEmail } from "react-icons/md";
-import { FaFacebook } from "react-icons/fa";
-import { AiFillInstagram } from "react-icons/ai";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaYoutube } from "react-icons/fa";
+
 import { RiSpeakFill } from "react-icons/ri";
 import GetCityName from "@/action/Admin/City/DestinationCity";
 import { Box, IconButton } from "@mui/material";
@@ -19,6 +16,7 @@ import HeaderAccordion from "../Accordion/HeaderAccordion";
 import { GiHamburgerMenu } from "react-icons/gi";
 import LinkMenu from "../Menu/LinkMenu";
 import dynamic from "next/dynamic";
+import SocialLinks from "../CommonUtils/SocialLinks";
 
 const UserMenuIcon = dynamic(() => import("@/components/Header/UserMenuIcon"), {
   ssr: false,
@@ -64,29 +62,20 @@ const Header: FC<HeaderProps> = async ({
   const helpsupport = [
     {
       title: "Blog",
-      url: "/help-support/travel-blog",
+      url: "/guidance/travel-blog",
     },
     {
       title: "Payment Guidance",
-      url: "/help-support/payment-guide",
+      url: "/guidance/payment-guide",
     },
     {
       title: "Talk to Us",
-      url: "/help-support/contact-us",
+      url: "/guidance/contact-us",
     },
     {
       title: "FAQ",
-      url: "/help-support/faq",
+      url: "/guidance/faq",
     },
-    // userId
-    //   ? {
-    //       title: "My Booking",
-    //       url: "/help-support/booking",
-    //     }
-    //   : {
-    //       title: "",
-    //       url: "",
-    //     },
   ];
 
   return (
@@ -94,23 +83,7 @@ const Header: FC<HeaderProps> = async ({
       <div className="lg:h-[40px] px-[50px] hidden lg:flex flex-wrap justify-between items-center  text-white bg-[#142D53]">
         <div className="flex gap-2  justify-center items-center">
           <h2 className="font-normal text-[14px]">Follow Us: </h2>
-          <Link
-            href={"https://www.facebook.com/profile.php?id=61556760246851"}
-            target="_blank"
-          >
-            <FaFacebook />{" "}
-          </Link>
-          <Link href={"https://www.instagram.com/2vntravel/"} target="_blank">
-            {" "}
-            <AiFillInstagram />{" "}
-          </Link>
-          <Link href={"https://twitter.com/2vntravel"} target="_blank">
-            <FaXTwitter />
-          </Link>
-          <Link href={"https://www.youtube.com/@2vntravel"} target="_blank">
-            {" "}
-            <FaYoutube />{" "}
-          </Link>
+          <SocialLinks className="text-l"/>
         </div>
         <div className="flex flex-wrap gap-2 ">
           <h2 className="flex gap-2 text-[14px] capitalize font-normal justify-center items-center">
@@ -175,7 +148,7 @@ const Header: FC<HeaderProps> = async ({
         >
           <div className="hidden lg:block">
             <LinkMenu
-              hrefpath={"/airline"}
+              hrefpath={"/airline-offers"}
               title={"Best Airline Offers"}
               color={"black"}
             />
@@ -213,13 +186,12 @@ const Header: FC<HeaderProps> = async ({
                 className="w-[40px] text-white bg-white mr-1 rounded-[20px]"
                 width={50}
                 height={10}
+                unoptimized
               />
 
               <div className="flex flex-col">
                 <a href={`tel: 855-767-7778`}>
                   <div className="text-[12px] font-semibold ">
-                    {/* Get the Best Fare by Dialing Toll-Free! */}
-                    {/* Call us to secure the best fare. */}
                     Call us 24/7 for Exclusive Fares
                   </div>
                   <div className="font-semibold "> 855-767-7778</div>
@@ -236,6 +208,7 @@ const Header: FC<HeaderProps> = async ({
                   className="w-[40px] text-white bg-white mr-1 rounded-[20px]"
                   width={50}
                   height={10}
+                  unoptimized
                 />
               </a>
             </h2>
@@ -319,7 +292,7 @@ const Header: FC<HeaderProps> = async ({
                   className="text-white"
                 >
                   <LinkMenu
-                    hrefpath={"/airline"}
+                    hrefpath={"/airline-offers"}
                     title={"Best Airline Offers"}
                     color={"white"}
                   />

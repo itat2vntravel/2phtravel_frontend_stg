@@ -33,8 +33,6 @@
   display: flex;
   justify-content: center;
   padding: 10px;
-  /* align-items: center; */
-  /* margin-top: 20px; */
 }
 
 .advancedsearch {
@@ -47,7 +45,6 @@
 }
 
 .buttonstyle {
-  /* background-color: rgb(187, 20, 15); */
   opacity: 1;
   border-radius: 20px;
   color: white;
@@ -68,12 +65,6 @@
   outline: none !important;
 }
 
-/* .datepciker > div:first-child {
-  position: static !important;
-} */
-/* .datepciker {
-  background-color: red;
-} */
 .inputdatepicker ~ div {
   z-index: 99999 !important;
 }

@@ -70,8 +70,6 @@ const MultiCity: FC<MultiCityProps> = ({
   } = useAutocomplete({
     id: "use-autocomplete-demo",
     options: AutocompleteOptions,
-    // getOptionLabel: (option) => option?.name,
-    // getOptionLabel: (option) => (cabin ? option?.name : option?.code),
     getOptionLabel: (option) => `${`${option?.name} [${option?.code}]`}`,
   });
   const currentDate = new Date();
@@ -84,13 +82,6 @@ const MultiCity: FC<MultiCityProps> = ({
     startDate: flight.date || formattedDate,
     endDate: flight.date || new Date(new Date().getFullYear(), 11, 1),
   });
-
-  // useEffect(() => {
-  //   setSingleDateValue({
-  //     startDacityte: flight.date,
-  //     endDate: new Date(new Date().getFullYear(), 11, 1),
-  //   });
-  // }, [flight, flightsall]);
 
   const handleDateChange = (value: any) => {
     onChange("date", value);
@@ -111,12 +102,6 @@ const MultiCity: FC<MultiCityProps> = ({
     setSingleDateValue(value);
   };
 
-  // const filtereddestinationAirport = AirportJson.filter(
-  //   (airport) => airport.IATA === flight.destination
-  // );
-  // const filteredAirport = AirportJson.filter(
-  //   (airport) => airport.IATA === flight.departure
-  // );
   const filtereddestinationAirport = airports.find(
     (airport) => airport.iata === flight.destination
   )?.name;

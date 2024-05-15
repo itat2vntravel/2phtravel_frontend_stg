@@ -36,7 +36,7 @@ export const metadata = {
 };
 
 async function HeroSectionApi() {
-  const page = "airline";
+  const page = "airline-offers";
   const section = "Banner";
 
   try {

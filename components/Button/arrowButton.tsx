@@ -37,45 +37,9 @@ const ArrowButton = () => {
     };
   }, []);
 
-  // const [Imageopen, setImageOpen] = useState(false);
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     if (!sessionStorage.getItem("ImageOpen")) {
-  //       setImageOpen(true);
-  //       sessionStorage.setItem("ImageOpen", "true");
-  //     }
-  //   }, 3000);
-  // }, []);
 
   return (
     <>
-      {/* {Imageopen && (
-        <div
-          className={`${Styles.banner} bg-customRed`}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            margin: "10px 0 ",
-          }}
-        >
-          <IoCloseSharp
-            onClick={() => setImageOpen(false)}
-            className="absolute  top-[-90px] right-3 cursor-pointer text-3xl text-black z-10 opacity-4"
-          />
-          <Image
-            src={promotion?.promotion?.image_url}
-            alt="BannerDemo Image"
-            width={140}
-            height={10}
-            priority
-            layout="responsive"
-            className="rounded-[10px]"
-          />
-        </div>
-      )} */}
       <div className="flex flex-row ">
         <div
           className={`${Styles.rnProgressParent} bg-customRed`}
@@ -104,15 +68,8 @@ const ArrowButton = () => {
               justifyContent: "center",
               margin: "10px 0 ",
             }}
-            // onClick={upArrowHandler}
-            onClick={() => router.push("/help-support/payment-guide")}
+            onClick={() => router.push("/guidance/payment-guide")}
           >
-            {/* <IoIosArrowUp
-        className="text-white text-xl"
-        // className={`${Styles.rnProgressParent} bg-customBlue`}
-        // style={{ color: "red" }}
-      /> */}
-
             <GiTakeMyMoney className="text-white text-4xl" />
           </div>
         </Tooltip>

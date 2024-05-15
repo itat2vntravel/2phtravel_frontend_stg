@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { MdAirlines } from "react-icons/md";
-// import GetFlightList from "@/action/Flight/FlightList";
 import { airports } from "@nwpr/airport-codes";
 import { IoClose } from "react-icons/io5";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -174,11 +173,6 @@ const UseCityautoComplted: React.FC<InputProps> = ({
     "CEB",
     "DVO",
     "PPS",
-    // "CGY",
-    // "BCD",
-    // "TAC",
-    // "ILO",
-    // "ZAM",
   ];
 
   const filteredAirports = airports
@@ -344,21 +338,15 @@ const UseCityautoComplted: React.FC<InputProps> = ({
           placeholder={placeholder}
           autoComplete="off"
           style={{
-            // borderRadius: "20px",
-            // border: "none",
             paddingTop: "20px",
             position: "relative",
             padding: "10px",
-            // width: matches ? "100%" : "215px",
           }}
           name={name}
           value={inputValue}
           onChange={handleChange}
-          // onFocus={handleInputFocus}
           onClick={handleInputFocus}
           onKeyDown={handleKeyDown}
-          // onBlur={handleInputBlur}
-          // required={required}
         />
         {inputValue && (
           <h1

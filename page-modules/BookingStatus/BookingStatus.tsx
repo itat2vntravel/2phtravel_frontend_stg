@@ -167,15 +167,6 @@ const BookingStatusSection: React.FC<BookingStatusSectionprops> = ({
       }
 
       if (startPage < 1) {
-        // paginationItems.push(
-        //   <button
-        //     key="first"
-        //     onClick={goToFirstPage}
-        //     className="mx-1 px-3 py-1  rounded-[10px]  border-[#DCDCDC] border-[2px]"
-        //   >
-        //     1
-        //   </button>
-        // );
         if (startPage > 2) {
           paginationItems.push(
             <span

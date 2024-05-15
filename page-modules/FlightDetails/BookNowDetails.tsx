@@ -5,15 +5,12 @@ import PaymentOptions from "./PaymentOptions/PaymentOptions";
 import Summery from "./Summary/Summery";
 import Styles from "./flightdetails.module.css";
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 import { Card } from "@mui/material";
 import ContactInfoForm from "./ContanctInfoForm";
 import PassengerDetails from "./PassengerDetails/PassengerDetails";
 
 const BookNowDetails = () => {
-  // if (!cookies().get("type")?.value || "") {
-  //   return redirect("/");
-  // }
+
   const type = JSON.parse(cookies().get("type")?.value || "");
   const adultscount = cookies().get("adults")?.value || 0;
   const childrencount = cookies().get("children")?.value || 0;

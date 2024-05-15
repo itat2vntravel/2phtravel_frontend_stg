@@ -94,14 +94,7 @@ export default function AirlineDealsPopup({
       date: formattedDate,
     };
   }
-  // const [SingleDatevalue, setSingleDateValue] = useState<DateValueType>({
-  //   startDate: new Date(),
-  //   endDate: null,
-  // });
-  // const [Datevalue, setDateValue] = useState<DateValueType>({
-  //   startDate: new Date(),
-  //   endDate: new Date(new Date().getTime(), 11, 1),
-  // });
+
   const currentDate = new Date();
   const endDate = new Date(currentDate.getTime() + 3 * 24 * 60 * 60 * 1000); // 3 days from startDate
 
@@ -130,13 +123,7 @@ export default function AirlineDealsPopup({
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        // let newUrl;
-        // newUrl = formUrlQuery({
-        //   params: searchParams.toString(),
-        //   keysToRemove: ["quotepopup", "airline"],
-        // });
-        // router.push(newUrl, { scroll: false });
-        router.push("/airline", { scroll: false });
+        router.push("/airline-offers", { scroll: false });
       }
     }
 
@@ -151,19 +138,6 @@ export default function AirlineDealsPopup({
   }
   const handleValueChange = (newValue: any) => {
     setDateValue(newValue);
-    // if (newValue.startDate && newValue.endDate) {
-    //   if (newValue.startDate !== newValue.endDate) {
-    //     setDateValue(newValue);
-    //   } else {
-    //     reactHotToast.error(
-    //       "Departure Date and return Date cannot be the same",
-    //       {
-    //         position: "top-right",
-    //         duration: 1000,
-    //       }
-    //     );
-    //   }
-    // }
   };
   const handleSingleValueChange = (newValue: any) => {
     setSingleDateValue(newValue);
@@ -184,12 +158,7 @@ export default function AirlineDealsPopup({
   ("");
 
   const handleClose = () => {
-    // let newUrl;
-    // newUrl = formUrlQuery({
-    //   params: searchParams.toString(),
-    //   keysToRemove: ["quotepopup", "airline"],
-    // });
-    router.push("/airline", { scroll: false });
+    router.push("/airline-offers", { scroll: false });
   };
   useEffect(() => {
     if (quotepopup) {
@@ -314,24 +283,9 @@ export default function AirlineDealsPopup({
       if (errorDepartureAirports.length > 0) {
         const errorDepartureParams = errorDepartureAirports.join(",");
         const errorDestinationParams = errorDestinationAirports.join(",");
-
-        // const errorQueryParams = `errordepartureAirport=${errorDepartureParams}&errordestinationAirport=${errorDestinationParams}`;
-
-        // router.push(errorQueryParams, { scroll: false });
-
         const errorQueryParams = `?errordepartureAirport=${errorDepartureParams}&errordestinationAirport=${errorDestinationParams}&quotepopup=open&airline=${Airlinepopup}`;
 
         router.push(errorQueryParams, { scroll: false });
-
-        // let newUrl;
-        // newUrl = formUrlQuery({
-        //   params: searchParams.toString() + `&${errorQueryParams}`,
-
-        //   key: "quotepopup",
-        //   value: "open",
-        // });
-
-        // router.push(newUrl, { scroll: false });
       }
 
       return { trips, realIndexCount, tripsCount };
@@ -372,16 +326,6 @@ export default function AirlineDealsPopup({
         missingFields.push("Phonenumber");
       }
 
-      // if (missingFields.length > 0) {
-      //   const errorQueryParams = missingFields
-      //     .map((field) => `error${field}=${field}`)
-      //     .join("&");
-      //   router.push(`?${errorQueryParams}`, {
-      //     scroll: false,
-      //   });
-
-      //   // return;
-      // }
       while (formData.get(`departureAirport ${index}`) !== null) {
         realIndexCount++;
 
@@ -442,20 +386,8 @@ export default function AirlineDealsPopup({
 
           const combinedErrorParams = `?${errorQueryParams}&${missingFieldsParams}&quotepopup=open&airline=${Airlinepopup}`;
           router.push(combinedErrorParams, { scroll: false });
-          // router.push(combinedErrorParams, { scroll: false });
-
-          // let newUrl;
-          // newUrl = formUrlQuery({
-          //   params: searchParams.toString() + `&${combinedErrorParams}`,
-
-          //   key: "quotepopup",
-          //   value: "open",
-          // });
-
-          // router.push(newUrl, { scroll: false });
         }
 
-        // router.push(errorQueryParams, { scroll: false });
       }
 
       return { trips, realIndexCount, tripsCount };
@@ -479,8 +411,6 @@ export default function AirlineDealsPopup({
     const Email = formData.get("Email") as string;
     const mobile_number = formData.get("phonenumber");
 
-    // if (!userId) {
-    //   if (!guestid || guestid === "null") {
     if (seletedtype === "multicities") {
       const MultiCityData = NonUserconvertToFlight(formData);
       let missingFields = [];
@@ -502,7 +432,6 @@ export default function AirlineDealsPopup({
         missingFields.push("Phonenumber");
       }
       if (
-        // missingFields.length == 0 &&
         MultiCityData.realIndexCount !== MultiCityData.tripsCount
       ) {
         seterrormessage(true);
@@ -557,22 +486,10 @@ export default function AirlineDealsPopup({
         router.push(`?${errorQueryParams}`, {
           scroll: false,
         });
-
-        // let newUrl;
-        // newUrl = formUrlQuery({
-        //   params: searchParams.toString() + `&${errorQueryParams}`,
-
-        //   key: "quotepopup",
-        //   value: "open",
-        // });
-
-        // router.push(newUrl, { scroll: false });
         seterrormessage(true);
         return;
       }
     }
-    //   }
-    // }
 
     if (!trips) {
       // Same Airport to Validate
@@ -593,18 +510,6 @@ export default function AirlineDealsPopup({
           { scroll: false }
         );
 
-        // let newUrl;
-        // newUrl = formUrlQuery({
-        //   params:
-        //     searchParams.toString() +
-        //     // `&airline=${Airlinepopup}` +
-        //     `&errordepartureAirport=departureAirport&errordestinationAirport=destinationAirport`,
-
-        //   key: "quotepopup",
-        //   value: "open",
-        // });
-
-        // router.push(newUrl, { scroll: false });
         seterrormessage(true);
         return;
       }
@@ -626,18 +531,6 @@ export default function AirlineDealsPopup({
           }
         );
 
-        // let newUrl;
-        // newUrl = formUrlQuery({
-        //   params:
-        //     searchParams.toString() +
-        //     // `&airline=${Airlinepopup}` +
-        //     `&errordepartureAirport=departureAirport`,
-
-        //   key: "quotepopup",
-        //   value: "open",
-        // });
-
-        // router.push(newUrl, { scroll: false });
         seterrormessage(true);
         return; // Exit the function if validation fails
       }
@@ -656,18 +549,6 @@ export default function AirlineDealsPopup({
           }
         );
 
-        // let newUrl;
-        // newUrl = formUrlQuery({
-        //   params:
-        //     searchParams.toString() +
-        //     // `&airline=${Airlinepopup}` +
-        //     `&errordestinationAirport=destinationAirport`,
-
-        //   key: "quotepopup",
-        //   value: "open",
-        // });
-
-        // router.push(newUrl, { scroll: false });
         seterrormessage(true);
         return; // Exit the function if validation fails
       }
@@ -762,11 +643,7 @@ export default function AirlineDealsPopup({
     if (response.message) {
       setLoading(false);
 
-      // let newUrl;
-      // newUrl = formUrlQuery({
-      //   params: "",
-      // });
-      router.push("/airline", { scroll: false });
+      router.push("/airline-offers", { scroll: false });
 
       Swal.fire({
         icon: "success",
@@ -780,12 +657,6 @@ export default function AirlineDealsPopup({
       });
     }
 
-    // if (response.message) {
-    //   // setValue("");
-    //   setTimeout(() => {
-    //     router.push("/BookingStatus");
-    //   }, 1000);
-    // }
   };
 
   return (
@@ -910,17 +781,6 @@ export default function AirlineDealsPopup({
                                     onClick={handleAddFlight}
                                   />
                                 </button>
-                                {/* <AddIcon
-                        style={{
-                          color: "white",
-                          background: "red",
-                        }}
-                        className="mr-3"
-                        onClick={handleAddFlight}
-                        // disbaled={flights.length < 4 ? true : false}
-                        disabled={flights.length < 4 ? true : false}
-                        component="svg"
-                      /> */}
                                 <RemoveIcon
                                   style={{
                                     color: "white",
@@ -1052,22 +912,8 @@ export default function AirlineDealsPopup({
                         >
                           Get a Quote
                         </GetQuoteButton>
-                        {/* <button
-                          type="submit"
-                          className=" w-full justify-center rounded-md bg-[#142D53] px-3 py-2 text-sm font-semibold text-white shadow-sm "
-                        ></button> */}
-                      </div>
 
-                      {/* <div className="flex justify-end mt-4 md:mt-2">
-                  <SearchButton
-                    text={"Search Now"}
-                    type={"submit"}
-                    loadingtext={"Searching..."}
-                  />
-                </div> */}
-                      {/* <h6 className={`${Styles.advancedsearch} ${Styles.font}`}>
-          Advanced Search Option(+)
-        </h6> */}
+                      </div>
                     </form>
                   </div>
                 </div>

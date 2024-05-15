@@ -63,13 +63,6 @@ const Agreement = () => {
         control={<Checkbox />}
         label={`I have read and agreed to the Terms and Conditions, Fare Rules and Restrictions of this booking engine. International flights require special Travel documentation for each traveler. I hereby authorize the total amount USD ${totalPrice} be applied to the credit card. I understand that this serves as my legal signature.`}
       />
-
-      {/* <CustomButton
-        text="Submit and Book"
-        fullWidth="true"
-        customclass={`w-[100%] mt-5`}
-        colored={"true"}
-      /> */}
     </div>
   );
 };

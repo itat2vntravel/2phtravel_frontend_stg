@@ -14,10 +14,7 @@ export interface BookNowInterface {
 }
 
 const BookNow: React.FC<BookNowInterface> = ({ searchParams }) => {
-  // const userId = cookies().get("user_id")?.value || "";
-  // if (!userId) {
-  //   return redirect("/");
-  // }
+
   const UserLoginId = cookies().get("user_id")?.value || "";
   const firstName = cookies().get("first_name")?.value || "";
 

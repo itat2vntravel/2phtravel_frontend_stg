@@ -66,14 +66,6 @@ const UseModifyAutocomplete: React.FC<InputProps> = ({
     setHoveredOption("");
   };
 
-  // const handleInputBlur = () => {
-  //   setTimeout(() => {
-
-  //     setShowOptions(false);
-  //     setHoveredOption("");
-  //   }, 1000);
-  // };
-
   const handleSelectOption = (selectedOption: string) => {
     setHoveredOption("");
     setInputValue(selectedOption);
@@ -155,13 +147,7 @@ const UseModifyAutocomplete: React.FC<InputProps> = ({
             {AutocompleteOptions.slice(0, 10).map((econmyclass, index) => (
               <li
                 key={index}
-                // className={`px-3 py-2 cursor-pointer select-none hover:bg-[#162E54] hover:text-white ${
-                //   selectedOption === econmyclass.name
-                //     ? hoveredOption == ""
-                //       ? "bg-customBlue text-white"
-                //       : ""
-                //     : ""
-                // } `}
+
                 className={`px-3 py-2 cursor-pointer select-none hover:bg-[#162E54] hover:text-white 
                 ${
                   selectedOption === econmyclass.name

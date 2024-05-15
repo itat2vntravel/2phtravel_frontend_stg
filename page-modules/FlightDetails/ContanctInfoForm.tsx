@@ -1,7 +1,6 @@
 "use client";
 import useBookingQuote from "@/store/BookingQuote";
 import useBookingInfo from "@/store/FlightBooking";
-import { formUrlQuery } from "@/utils/formUrlQuery";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -47,17 +46,6 @@ const ContactInfoForm: React.FC<DataType> = ({
   const router = useRouter();
   const searchParams = useSearchParams();
   const errorMessage = searchParams.get("errorMessage");
-  // useEffect(() => {
-  //   let newUrl;
-  //   setInterval(() => {
-  //     newUrl = formUrlQuery({
-  //       params: searchParams.toString(),
-  //       keysToRemove: ["errorMessage"],
-  //     });
-
-  //     router.push(newUrl, { scroll: false });
-  //   }, 15000);
-  // }, [router, searchParams]);
 
   const { Username, contact_email, contact_phone, updateBookingInfoStore } =
     useBookingInfo((state) => state);

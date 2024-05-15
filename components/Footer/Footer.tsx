@@ -8,18 +8,14 @@ import visa from "@/public/Footerlogo/visa.png";
 
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { FaFacebook } from "react-icons/fa";
-import { AiFillInstagram } from "react-icons/ai";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaYoutube } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import Brands from "./brands";
 import ArrowButton from "../Button/arrowButton";
 import { Container } from "@mui/material";
-// import FooterMessage from "./FooterMessage";
 import Logo from "@/public/logo1.jpg";
-// import Logo from "@/public/logo/logoimage.jpg";
+
 import GetPromotion from "@/action/Admin/Promotion/GetPromotion";
+import SocialLinks from "../CommonUtils/SocialLinks";
 
 export interface FooterProps {}
 async function PromotionImage() {
@@ -70,19 +66,9 @@ const Footer: FC<FooterProps> = async () => {
                       priority
                       quality={100}
                       className="p-0 mix-blend-multiply mb-4"
-                      layout="responsive"
                     />
                   </div>
-                  {/* <Image
-                    src={Logo}
-                    alt="Logo"
-                    width={2000000}
-                    height={55}
-                    priority
-                    quality={100}
-                    className="mix-blend-multiply	w-[200px] h-auto"
-                    style={{ marginRight: "20px" }}
-                  /> */}
+      
                 </div>
                 <div className="text-[15px] md:text-sm text-justify mt-[30px]  max-w-xs text-[black] pl-0 md:pl-4 my-3 break-words w-[90%]">
                   2PH Travel is a brand of 2VN Travel INC, major international
@@ -101,27 +87,6 @@ const Footer: FC<FooterProps> = async () => {
                     />
                   ))}
 
-                  {/* <Image
-                    src={mastercard}
-                    alt="mastercard payment"
-                    width={230}
-                    height={20}
-                    className="h-[30px] w-[80px]"
-                  />
-                  <Image
-                    src={discover}
-                    alt="discover payment"
-                    width={230}
-                    height={20}
-                    className="h-[30px] w-[80px]"
-                  />
-                  <Image
-                    src={amex}
-                    alt="amex payment"
-                    width={230}
-                    height={20}
-                    className="h-[30px] w-[80px]"
-                  /> */}
                 </div>
               </div>
               <div className=" lg:col-span-2 md:col-span-6 col-span-9">
@@ -133,7 +98,6 @@ const Footer: FC<FooterProps> = async () => {
                   }}
                 >
                   About
-                  {/* Company */}
                 </h2>
                 <div
                   style={{ borderBottom: "3px solid red", width: "30%" }}
@@ -149,14 +113,12 @@ const Footer: FC<FooterProps> = async () => {
                   style={{ fontSize: "15px" }}
                 >
                   <Link href={"/terms-and-conditions"}>Terms & Condition</Link>
-                  {/* <Link href={"/terms-and-conditions"}>Terms and Conditions</Link> */}
                 </h5>
                 <h5
                   className="text-xs w-fit py-2 cursor-pointer  hover:text-customRed"
                   style={{ fontSize: "15px" }}
                 >
                   <Link href={"/refund-policy"}>Refund Policy</Link>
-                  {/* <Link href={"/refund-policy"}>Refund Policy</Link> */}
                 </h5>
                 <h5
                   className="text-xs w-fit py-2 cursor-pointer  hover:text-customRed"
@@ -164,34 +126,6 @@ const Footer: FC<FooterProps> = async () => {
                 >
                   <Link href={"/promotion"}>Promotion</Link>
                 </h5>
-                {/* <h5
-                  className="text-xs mt-2 py-2 cursor-pointer  hover:text-customRed"
-                  style={{ fontSize: "15px" }}
-                >
-                  <Link href={"/help-support/contact-us"}>Talk to Us</Link>
-                 
-                </h5> */}
-                {/* <h5
-                  className="text-xs  py-2 cursor-pointer  hover:text-customRed"
-                  style={{ fontSize: "15px" }}
-                >
-                  <Link href={"/help-support/faq"}>Common Inquiry</Link>
-                 
-                </h5> */}
-                {/* <h5
-                  className="text-xs  py-2 cursor-pointer  hover:text-customRed"
-                  style={{ fontSize: "15px" }}
-                >
-                  <Link href={"/help-support/travel-blog"}>Blog</Link>
-                
-                </h5>
-
-                <h5
-                  className="text-xs  py-2 cursor-pointer  hover:text-customRed"
-                  style={{ fontSize: "15px" }}
-                >
-                  <Link href={"/promotion"}>Promotion</Link>
-                </h5> */}
               </div>
               <div className=" lg:col-span-2 md:col-span-6 col-span-9 md:my-10 md:pl-4 lg:pl-0 lg:my-0">
                 <h2
@@ -202,17 +136,10 @@ const Footer: FC<FooterProps> = async () => {
                   }}
                 >
                   Customer services
-                  {/* Info Links */}
                 </h2>
                 <div
                   style={{ borderBottom: "3px solid red", width: "30%" }}
                 ></div>
-                {/* <h5
-                  className="text-xs mt-2 py-2 cursor-pointer  hover:text-customRed"
-                  style={{ fontSize: "15px" }}
-                >
-                  <Link href={"/ourcompany"}>Our company details</Link>
-                </h5> */}
                 <h5
                   className="text-xs w-fit py-2 cursor-pointer  hover:text-customRed"
                   style={{ fontSize: "15px" }}
@@ -225,20 +152,7 @@ const Footer: FC<FooterProps> = async () => {
                 >
                   <Link href={"/cookie-policy"}>Cookies Policy</Link>
                 </h5>
-                {/* <h5
-                  className="text-xs  py-2 cursor-pointer  hover:text-customRed"
-                  style={{ fontSize: "15px" }}
-                >
-                  <Link href={"/refund-policy"}>Refund policy</Link>
-                 
-                </h5> */}
-                {/* <h5
-                  className="text-xs  py-2 cursor-pointer  hover:text-customRed"
-                  style={{ fontSize: "15px" }}
-                >
-                  <Link href={"/payment-guide"}>Payment Pattern</Link>
-                 
-                </h5> */}
+
                 <h5
                   className="text-xs w-fit py-2 cursor-pointer leading-6  hover:text-customRed"
                   style={{ fontSize: "15px" }}
@@ -248,12 +162,6 @@ const Footer: FC<FooterProps> = async () => {
                     <br /> Personal Information
                   </Link>
                 </h5>
-                {/* <h5
-                  className="text-xs  py-2 cursor-pointer leading-6  hover:text-customRed"
-                  style={{ fontSize: "15px" }}
-                >
-                  <Link href={"/payment-guide"}>Payment Guidelines</Link>
-                </h5> */}
               </div>
               <div className=" lg:col-span-2 md:col-span-6 col-span-9 md:my-10 lg:my-0">
                 <h2
@@ -264,7 +172,6 @@ const Footer: FC<FooterProps> = async () => {
                   }}
                 >
                   Get in touch
-                  {/* Contact-us */}
                 </h2>
                 <div
                   style={{ borderBottom: "3px solid red", width: "30%" }}
@@ -314,41 +221,10 @@ const Footer: FC<FooterProps> = async () => {
               >
                 Follow Us
               </h2>
-              <div className="flex justify-between items-start">
-                <h5 className="text-xs  py-2 cursor-pointer">
-                  <Link
-                    href={
-                      "https://www.facebook.com/profile.php?id=61556760246851"
-                    }
-                    target="_blank"
-                  >
-                    <FaFacebook className="text-4xl text-customRed  rounded-full mr-3 px-1  hover:px-0" />
-                  </Link>
-                </h5>
-                <h5 className="text-xs  py-2 cursor-pointer">
-                  <Link
-                    href={"https://www.instagram.com/2vntravel/"}
-                    target="_blank"
-                  >
-                    <AiFillInstagram className="text-4xl text-customRed  rounded-full mr-3 px-1  hover:px-0" />
-                  </Link>
-                </h5>
-                <h5 className="text-xs  py-2 cursor-pointer">
-                  <Link href={"https://twitter.com/2vntravel"} target="_blank">
-                    <FaXTwitter className="text-4xl text-customRed rounded-full mr-3 px-1  hover:px-0" />
-                  </Link>
-                </h5>
-                <h5 className="text-xs  py-2 cursor-pointer">
-                  <Link
-                    href={"https://www.youtube.com/@2vntravel"}
-                    target="_blank"
-                  >
-                    <FaYoutube
-                      // style={{ color: "red" }}
-                      className="text-4xl text-customRed  rounded-full mr-3 px-1 hover:px-0"
-                    />
-                  </Link>
-                </h5>
+              <div className="flex justify-between items-start">            
+               
+                  <SocialLinks className="text-4xl text-customRed p-1"/>
+            
               </div>
               <div className="my-[3px]">
                 <div className="px-3 text-xs md:text-sm text-[grey]">

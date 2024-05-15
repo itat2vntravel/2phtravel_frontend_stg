@@ -1,8 +1,10 @@
 "use client";
-import useModifySearch from "@/store/ModifySearch";
-import React, { FC } from "react";
+
+import React, { FC, useEffect } from "react";
 import FlightIconImage from "../Images/FlightIcon";
 import airports from "@nwpr/airport-codes";
+import { redirect } from "next/navigation";
+import useModifySearch from "@/store/ModifySearch";
 
 interface SearchTopBannerprops {
   Selecttype?: string;
@@ -23,12 +25,21 @@ const SearchTopBanner: FC<SearchTopBannerprops> = ({
 }) => {
   const { departure, destination } = useModifySearch((state) => state);
 
+  useEffect(()=>{
+    console.log(departure, destination)
+     if(!departure && !destination)
+      {
+        redirect("/");
+      }
+      },[])
   const departureAirport = airports.find(
     (airport) => airport.iata === departure
   )?.name;
   const destinationAirport = airports.find(
     (airport) => airport.iata === destination
   )?.name;
+
+
   return (
     <>
       {Selecttype === "multicities" ? (

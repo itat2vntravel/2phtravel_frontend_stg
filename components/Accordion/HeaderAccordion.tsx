@@ -25,7 +25,7 @@ const HeaderAccordion: React.FC<Props> = ({ accordion, optionheaderData }) => {
     ? "#EC2719"
     : "white";
 
-  const selectedHelpSupport = router.includes("/help-support")
+  const selectedHelpSupport = router.includes("/guidance")
     ? "#EC2719"
     : "white";
   return (

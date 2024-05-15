@@ -37,7 +37,7 @@ const AdminSidebar = () => {
         },
         {
           title: "Top Airline",
-          url: "/admin/airline",
+          url: "/admin/airline-offers",
           icon: <GiRocketFlight className="text-lg" />,
         },
         {
@@ -110,7 +110,7 @@ const AdminSidebar = () => {
                     res.title === "Banner" &&
                     (pathname === "/admin/homebanner" ||
                       pathname === "/admin/homeoffer" ||
-                      pathname === "/admin/airline")
+                      pathname === "/admin/airline-offers")
                       ? " bg-blue-50 px-4 py-3 text-[#142B51]"
                       : res.title === "Destination" &&
                         (pathname === "/admin/flight-deals" ||

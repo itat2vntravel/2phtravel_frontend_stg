@@ -2,20 +2,14 @@
 import { Card, Tooltip } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Styles from "./summery.module.css";
-import InfoIcon from "@mui/icons-material/Info";
+
 import CustomButton from "@/components/Button/Button";
 import Link from "next/link";
 import useSearchFlight from "@/store/flightSearchStore";
-import useBookingInfo from "@/store/FlightBooking";
+
 import { usePathname, useRouter } from "next/navigation";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-import CardpaymentApi from "@/action/booknow/Cardpayment";
-import BookingFormApi from "@/action/booknow/booknow";
-import { PulseLoader } from "react-spinners";
+
 import { toast as reactHotToast, Toaster } from "react-hot-toast";
-import Swal from "sweetalert2";
-import useBookingQuote from "@/store/BookingQuote";
 
 export interface SummaryProps {
   type: string;
@@ -99,9 +93,7 @@ const Summery: React.FC<SummaryProps> = ({
         >
           <div>
             <b>Total Fees</b>
-            {/* <Tooltip title="Total Fees include Service Fees and Tax Fees">
-              <InfoIcon style={{ fontSize: "16px", marginLeft: "5px" }} />
-            </Tooltip> */}
+
           </div>
 
           <p className="text-xl">
@@ -112,17 +104,6 @@ const Summery: React.FC<SummaryProps> = ({
 
         {Currentpath === "/booknow" ? (
           <>
-            {/* <>
-              <button
-                className="bg-[#EC2719] text-white p-2 mt-[20px] w-full rounded-md"
-                type="button"
-                onClick={() => handlesubmit()}
-                disabled={loading ? true : false}
-              >
-                {loading ? <PulseLoader color="#fff" /> : " Submit and Book"}
-              </button>
-            </> */}
-
             <p className="text-gray-500 px-[15px] text-[12px]  flex justify-start items-start gap-1">
               <span>*</span> Prices are displayed for reference, contact our
               team to get better prices via email or wire.

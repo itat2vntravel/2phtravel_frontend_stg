@@ -437,12 +437,6 @@ const DestinationDeals: FC<flightdeals> = ({ flightdeals, cityname }) => {
                         >
                           Cancel
                         </Button>
-                        {/* <CustomButton
-                          text={"Submit"}
-                          loading={loading}
-                          // onClick={() => handleAddBanner()}
-                          customclass="bg-[#142B51] flex gap-[5px] justify-center rounded-md items-center text-white border-none w-[20%]"
-                        /> */}
                         <LoaderButton>Submit</LoaderButton>
                       </div>
                     </form>

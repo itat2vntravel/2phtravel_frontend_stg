@@ -14,44 +14,6 @@ const CookieBanner = dynamic(() => import("@/components/CookieBanner"), {
 
 const inter = Sen({ subsets: ["latin"] });
 
-// export const metadata: Metadata = {
-//   title: "2PH TRAVELS",
-//   description: "2PH TRAVELS",
-// };
-
-// export const metadata = {
-//   title: "2PH Travel - Your Ultimate Flight Booking Platform!",
-//   description: `2PH Travel - Where Every Journey Begins! Discover the best deals on flights, plan your dream vacation.Your trusted partner for seamless travel experiences..`,
-//   authors: [
-//     {
-//       name: "2PH Travel",
-//     },
-//   ],
-
-//   keywords: [
-//     "cheap flight to Philippines",
-//     "flight to Philippines",
-//     "flights to Philippines",
-//     "cheap flights Philippines",
-//     "cheap flights to Philippines",
-//     "cheapest flight to Philippines",
-//     "cheap flights to the Philippines",
-//     "Philippines plane tickets",
-//     "plane ticket to Philippines",
-//     "plane tickets to Philippines",
-//   ],
-// };
-
-// async function PromotionImage() {
-//   try {
-//     const response = await GetPromotion();
-//     return response;
-//   } catch (error) {
-//     console.error("Offer API request failed:", error);
-//     throw error;
-//   }
-// }
-
 export default async function RootLayout({
   children,
 }: Readonly<{

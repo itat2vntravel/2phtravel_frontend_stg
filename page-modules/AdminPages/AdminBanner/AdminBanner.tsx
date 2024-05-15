@@ -480,7 +480,7 @@ const AdminBanner: FC<BannerDataInterface> = ({ bannerdata }) => {
               width={140}
               height={10}
               priority
-              layout="responsive"
+              // layout="responsive"
               className="hidden lg:block h-full w-full "
             />
           </Dialog>

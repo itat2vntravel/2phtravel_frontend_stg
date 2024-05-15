@@ -257,39 +257,6 @@ const ActionButton: React.FC<ActionInterfae> = ({ response, cityname }) => {
       </Link>
 
       {deleteOpen && (
-        // <Dialog
-        //   open={deleteOpen}
-        //   onClose={() => {
-        //     router.push("/admin/flight-deals");
-        //     setDeleteOpen(false);
-        //   }}
-        //   aria-labelledby="alert-dialog-title"
-        //   aria-describedby="alert-dialog-description"
-        // >
-        //   <DialogTitle id="alert-dialog-title">
-        //     {"Are you sure you want to Delete?"}
-        //   </DialogTitle>
-
-        //   <DialogActions>
-        //     <Button
-        //       onClick={() => {
-        //         router.push("/admin/flight-deals");
-        //         setDeleteOpen(false);
-        //       }}
-        //       className=" border-[#142B51] border-solid text-[#142B51] flex gap-[5px] justify-center rounded-md items-center w-[20%]"
-        //     >
-        //       NO
-        //     </Button>
-        //     <Button
-        //       onClick={DeleteBannerApi}
-        //       className=" flex hover:bg-red-500 gap-[5px] justify-center rounded-md items-center bg-[#142B51] text-white border-none w-[20%]"
-        //       variant="contained"
-        //       style={{ background: "#142B51" }}
-        //     >
-        //       {loading ? <PulseLoader color="white" /> : "Yes"}
-        //     </Button>
-        //   </DialogActions>
-        // </Dialog>
         <ModalPopup
           open={deleteOpen}
           setopen={setDeleteOpen}
@@ -373,14 +340,6 @@ const ActionButton: React.FC<ActionInterfae> = ({ response, cityname }) => {
                               </div>
 
                               <div className="mr-3">
-                                {/* <UseCityautoComplted
-                                  label={"Destination"}
-                                  placeholder={"Airport / City Name"}
-                                  name={"destinationAirport"}
-                                  required={true}
-                                  icon={<FlightIconImage />}
-                                  defaultValue={`${destinationAirport}[${destination}]`}
-                                /> */}
                                 <DestinationCityAutoComplete
                                   label={"Destination"}
                                   placeholder={"Select City Name"}
@@ -444,12 +403,6 @@ const ActionButton: React.FC<ActionInterfae> = ({ response, cityname }) => {
                         Cancel
                       </Button>
                       <LoaderButton>Submit</LoaderButton>
-                      {/* <CustomButton
-                        text={"Submit"}
-                        loading={loading}
-                        // onClick={handleSumbit}
-                        customclass="bg-[#142B51] flex gap-[5px] justify-center rounded-md items-center text-white border-none w-[20%]"
-                      /> */}
                     </div>
                   </form>
                 </div>

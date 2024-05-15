@@ -161,42 +161,6 @@ const AboutUs: React.FC<PrivacyInterface> = ({ searchParams }) => {
               </div>
             </div>
           </div>
-          {/* <div className="flex flex-row gap-3 mt-10">
-            <div className="w-[50%]">
-              <h6 className="text-customRed">Our Story</h6>
-              <h1 className="mt-1 text-customBlue">
-                Why our Customers loves us?
-              </h1>
-
-              <p className="text-sm mt-3">
-                <b>Ease of Use:</b> Our platform is designed with simplicity in
-                mind. Booking flights, accommodations, and activities is quick
-                and intuitive, saving our customers time and hassle. Our
-                platform is designed with simplicity in mind.
-              </p>
-              <p className="text-sm mt-3">
-                <b>Customer Service:</b> At 2PH Travel, customer satisfaction is
-                our top priority. Our dedicated support team is available around
-                the clock to assist with any inquiries or concerns, ensuring
-                that our customers feel supported every step of the way.
-              </p>
-              <p className="text-sm mt-3">
-                <b>Personalization:</b> We understand that every traveler is
-                unique. That&rsquo;s why we offer personalized recommendations
-                and tailored experiences to match our customers preferences and
-                interests.
-              </p>
-              <p className="text-sm mt-3">
-                <b>Reliability:</b> Our extensive network of trusted partners
-                ensures that our customers can travel with confidence. From
-                flights to accommodations, we only work with reputable providers
-                to guarantee a seamless experience.
-              </p>
-            </div>
-            <div>
-              <Image src={AboutImage} alt="about-us" width={700} height={700} />
-            </div>
-          </div> */}
 
           <div className="mb-5 my-5">
             <div className=" hidden md:block">
@@ -253,34 +217,6 @@ const AboutUs: React.FC<PrivacyInterface> = ({ searchParams }) => {
               </div>
             </div>
           </div>
-
-          {/* <div className="container mx-auto">
-            <div className={` flex justify-around items-center flex-wrap`}>
-              <div className="flex flex-col items-center justify-center lg:flex-1 flex-wrap">
-                <div
-                  className="text-3xl md:text-3xl  lg:text-5xl my-5 font-bold"
-                  style={{ width: "81%" }}
-                >
-                  What people say
-                  <br />
-                  <span style={{ color: " rgb(187, 20, 15)" }}> about us.</span>
-                </div>
-                <div
-                  className="text-lg md:text-lg lg:text-xl my-5 text-[14px]"
-                  style={{ color: "#666666", width: "80%" }}
-                >
-                  Our Clients send us bunch of smilies with our services and we
-                  love them.
-                </div>
-              </div>
-
-              <Review />
-            </div>
-          </div> */}
-
-          {/* <Card className={`${Styles.cardShadow} p-5`}>
-            
-          </Card> */}
         </div>
       </div>
 

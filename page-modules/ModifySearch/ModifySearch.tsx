@@ -142,9 +142,7 @@ const ModifySearch: FC<ModifySearchProps> = ({
   const filtereddestinationAirport = airports.find(
     (airport) => airport.iata === destinationAirport
   )?.name;
-  // FlightList.find(
-  //   (airport: FlightDataprops) => airport.iata === departure
-  // )?.city_name;
+
   const filteredAirport = airports.find(
     (airport) => airport.iata === departureAirport
   )?.name;
@@ -160,17 +158,19 @@ const ModifySearch: FC<ModifySearchProps> = ({
 
   const CurrentDateformattedDate = `${year}-${month}-${day}`;
   const ThreeDateformattedDate = `${year1}-${month1}-${day1}`;
-  console.log("ThreeDateformattedDate", ThreeDateformattedDate);
+  
   const [Datevalue, setDateValue] = useState<DateValueType>({
     startDate: departure_date,
     endDate: return_date,
   });
-  console.log("Datevalue", Datevalue);
+  
   const [SingleDatevalue, setSingleDateValue] = useState<DateValueType>({
     startDate: departure_date,
     endDate: new Date(new Date().getFullYear(), 11, 1), // December of the current year
   });
+
   useEffect(() => {
+
     setseletedtype(type);
     setDateValue({
       startDate: departure_date || CurrentDateformattedDate,
@@ -186,14 +186,7 @@ const ModifySearch: FC<ModifySearchProps> = ({
     if (newValue.startDate !== newValue.endDate) {
       setDateValue(newValue);
     } else {
-      // toast.error("startDate and endDate cannot be the same");
-      // reactHotToast.error("startDate and endDate cannot be the same", {
-      //   position: "top-right",
-      //   duration: 3000,
-      //   style: {
-      //     fontWeight: 600,
-      //   },
-      // });
+
     }
   };
   const handleSingleValueChange = (newValue: any) => {
@@ -209,9 +202,6 @@ const ModifySearch: FC<ModifySearchProps> = ({
   };
   const [flights, setFlights] = useState<Array<any>>([createNewFlight()]);
 
-  // function createNewFlight() {
-  //   return { departure: "", destination: "", date: null };
-  // }
   function createNewFlight() {
     const currentDate = new Date();
     const day = String(currentDate.getDate()).padStart(2, "0");
@@ -292,12 +282,7 @@ const ModifySearch: FC<ModifySearchProps> = ({
   const { ModifySearchStore } = useModifySearch((state) => state);
 
   const handlerouter = () => {
-    // let newUrl;
-    // newUrl = formUrlQuery({
-    //   params: searchParams.toString(),
-    //   keysToRemove: ["airline", "stop", "departtime"],
-    // });
-    // router.push(newUrl, { scroll: false });
+
   };
   const formatAirport = (dataString: any) => {
     if (dataString) {
@@ -313,9 +298,7 @@ const ModifySearch: FC<ModifySearchProps> = ({
   };
   function formatTripDate(dateString: any) {
     if (dateString) {
-      // const [year, month, day] = dateString.split("-");
-      // const formattedDate = `${month}${day}${year}`;
-      // return formattedDate;
+  
       if (dateString?.includes("-")) {
         const [year, month, day] = dateString.split("-"); // Split the date string into year, month, and day
         return `${month}${day}${year}`;
@@ -467,17 +450,6 @@ const ModifySearch: FC<ModifySearchProps> = ({
     ? formatAirport(destinationValue)
     : undefined;
 
-  // const disbaledvalue = !trips
-  //   ? departureAirportmodify == depatureSplitValue &&
-  //     destinationAirportmodify == destinationSplitValue &&
-  //     cabinmodify == CabinValueclass &&
-  //     typemodify == seletedtype &&
-  //     departureDatemodify == formattedStartDate &&
-  //     departureDatemodify == formattedOnewayStartDate &&
-  //     adultsmodify == adultsCount &&
-  //     childrenmodify == children &&
-  //     Infantsmodify == InfantsCount
-  //   : null;
   const disbaledvalue = !trips
     ? departure == depatureSplitValue &&
       destination == destinationSplitValue &&
@@ -666,9 +638,6 @@ const ModifySearch: FC<ModifySearchProps> = ({
                   });
                 }, 5000);
 
-                // router.push(`/flight/search?${filterairlineCodesString}`, {
-                //   scroll: false,
-                // });
               } else {
                 localStorage.setItem(
                   "guestuserid",
@@ -746,18 +715,7 @@ const ModifySearch: FC<ModifySearchProps> = ({
                       />
                     </>
                   ))}
-                  {/* {flights.map((flight, index) => (
-                    <>
-                      <MultiCity
-                        flight={flight}
-                        flightsall={flights}
-                        index={index}
-                        onChange={(key, value) =>
-                          handleFlightChange(index, key, value)
-                        }
-                      />{" "}
-                    </>
-                  ))} */}
+           
                 </div>
                 <Grid
                   item
@@ -983,13 +941,6 @@ const ModifySearch: FC<ModifySearchProps> = ({
             )}
 
             <div className="flex justify-end gap-2 ">
-              {/* <button
-                className={`w-auto text-white text-[18px] rounded-[5px]  p-3 md:px-[15px] md:py-[1px] bg-[#142c51] font-normal`}
-                onClick={handleModifyClose}
-                type="button"
-              >
-                Close
-              </button> */}
               <div onClick={handlerouter} className="mt-3">
                 <ModifySearchButton
                   text={"Modify"}

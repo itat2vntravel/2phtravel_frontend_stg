@@ -68,6 +68,7 @@ const FlightSearchDemo: FC<FlightSearchDemoProps> = ({
     (state) => state
   );
   const UserFullId = FulluserId as string;
+  
   useEffect(() => {
     router.push("/", { scroll: false });
   }, [router]);
@@ -320,17 +321,6 @@ const FlightSearchDemo: FC<FlightSearchDemoProps> = ({
       if (!mobile_number) {
         missingFields.push("Phonenumber");
       }
-
-      // if (missingFields.length > 0) {
-      //   const errorQueryParams = missingFields
-      //     .map((field) => `error${field}=${field}`)
-      //     .join("&");
-      //   router.push(`?${errorQueryParams}`, {
-      //     scroll: false,
-      //   });
-
-      //   // return;
-      // }
       while (formData.get(`departureAirport ${index}`) !== null) {
         realIndexCount++;
 
@@ -650,12 +640,6 @@ const FlightSearchDemo: FC<FlightSearchDemoProps> = ({
                   searchResult?.hop2WsError?.customerSessionId
                 );
 
-                // Swal.fire({
-                //   icon: "error",
-                //   // title: "Oops...",
-                //   text: searchResult?.hop2WsError?.errors[0].message,
-                // });
-
                 redirect("/flight/search");
               } else {
                 localStorage.setItem(
@@ -758,17 +742,6 @@ const FlightSearchDemo: FC<FlightSearchDemoProps> = ({
                         onClick={handleAddFlight}
                       />
                     </button>
-                    {/* <AddIcon
-                        style={{
-                          color: "white",
-                          background: "red",
-                        }}
-                        className="mr-3"
-                        onClick={handleAddFlight}
-                        // disbaled={flights.length < 4 ? true : false}
-                        disabled={flights.length < 4 ? true : false}
-                        component="svg"
-                      /> */}
                     <RemoveIcon
                       style={{
                         color: "white",
@@ -934,13 +907,9 @@ const FlightSearchDemo: FC<FlightSearchDemoProps> = ({
               loadingtext={"Searching..."}
             />
           </div>
-          {/*<h6 className={`${Styles.advancedsearch} ${Styles.font}`}>
-          Advanced Search Option(+)
-        </h6> */}
+
         </form>
       </div>
-      {/* )} */}
-      {/* <ToastContainer /> */}
       <Toaster />
     </>
   );

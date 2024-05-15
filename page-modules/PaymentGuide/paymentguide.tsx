@@ -144,11 +144,7 @@ const Paymentguide = () => {
                 <p>
                   <b>Bank name: </b> Bank of America
                 </p>
-                {/* <p>
-                  <b>Bank address:</b> TECHCOMBANK (TCB) - <br></br>THU DUC
-                  BRANCH - 117 Dan Chu,<br></br> Binh Tho Ward, Thu Duc,
-                  <br></br> Ho Chi Minh City
-                </p> */}
+
                 <p>
                   <b> Routing number: </b> 121000358
                 </p>
@@ -202,18 +198,6 @@ const Paymentguide = () => {
                   <b>Zelle account :</b> accounting@2phtravel.com
                 </p>
 
-                {/* <p>
-                  <b>Account name :</b> Nguyen Thi Ha
-                </p>
-                <p>
-                  <b>Account number :</b> 1903 9005 1570 18 (pay in VND)
-                </p>
-                <p>
-                  <b>INC Bank account:</b> 325093904814
-                </p>
-                <p>
-                  <b>Routing number :</b> 121000358
-                </p> */}
               </div>
 
               <h1 className="mt-6 mb-4 text-[#152D54]">
@@ -264,18 +248,6 @@ const Paymentguide = () => {
                   <b>Paypal account :</b> accounting@2phtravel.com
                 </p>
 
-                {/* <p>
-                  <b>Account name :</b> Nguyen Thi Ha
-                </p>
-                <p>
-                  <b>Account number :</b> 1903 9005 1570 18 (pay in VND)
-                </p>
-                <p>
-                  <b>INC Bank account:</b> 325093904814
-                </p>
-                <p>
-                  <b>Routing number :</b> 121000358
-                </p> */}
               </div>
 
               <h1 className="mt-6 mb-4 text-[#152D54]">
@@ -334,12 +306,11 @@ const Paymentguide = () => {
                 </p>
               </div>
               <div className=" border rounded-2xl  p-5 pt-2  leading-8 w-fit">
-                {/* <p>Customers can see the test sample below:</p> */}
+         
                 <p>Customers can see the Check sample below:</p>
                 <Image
                   src={Check}
                   alt="bank"
-                  // className=" h-[50px] w-[95px]"
                   width={700}
                   height={30}
                 />
@@ -370,60 +341,7 @@ const Paymentguide = () => {
               </div>
             </div>{" "}
           </>
-        ) : // : paymentoptions === "Bank Transfer" ? (
-        //   <>
-        //     {" "}
-        //     <div className="">
-        //       <div className="flex flex-col  mb-4">
-        //         <h1 className="text-lg mb-2">Bank Transfer</h1>
-
-        //         <p>
-        //           You have the option to choose Bank Transfer as your method of
-        //           payment.<br></br> Please transfer the funds to the following
-        //           account details provided below:
-        //         </p>
-        //       </div>
-        //       <div className=" border rounded-2xl shadow-md p-5 pt-1 leading-8 w-fit">
-        //         <Image
-        //           src={Bank}
-        //           alt="bank"
-        //           className="h-[110px] w-[125px]"
-        //           width={200}
-        //           height={30}
-        //         />
-        //         <h4 className="mb-2">
-        //           <b>TECHCOMBANK (TCB) - HO CHI MINH CITY BRANCH</b>
-        //         </h4>
-        //         <p>
-        //           <b>Name :</b>2PH Travel COMPANY LIMITED
-        //         </p>
-        //         <p>
-        //           <b>Account number :</b> 1903 8995 3068 81
-        //         </p>
-        //         <p>
-        //           <b>Bank :</b> Techcombank Saigon (TCB SAI GON)
-        //         </p>
-        //       </div>
-
-        //       <h1 className="mt-6 mb-4 text-[#152D54]">
-        //         2PH Travel - Prestige, Dedication, Professionalism Address:
-        //       </h1>
-        //       <div className="flex gap-6 flex-wrap">
-        //         <div className="flex border shadow-md rounded-2xl p-4 w-fit">
-        //           <div className="pr-4 ">
-        //             <div className="flex items-center mb-1">
-        //               <IoLocationSharp className="text-base mr-1 text-[red] " />
-        //               <b>US Office:</b>
-        //             </div>
-        //             9636 Garden Grove Blvd, Suite 22, Garden <br></br> Suite CA
-        //             92844<br></br> Hotline +1 <a href={`tel: 855-767-7778`}>855-767-7778</a> <br></br>
-        //             Open: Mon-Fri (9am-3pm)
-        //           </div>
-        //         </div>
-        //       </div>
-        //     </div>{" "}
-        //   </>
-        // )
+        ) : 
         paymentoptions === "Credit Card" ? (
           <>
             {" "}

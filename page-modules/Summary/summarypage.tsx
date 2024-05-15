@@ -142,23 +142,6 @@ const FilghtDetailsSummary: FC<FilghtDetailsSummaryProps> = ({
                                   airport.iata === segments.departureAirportCode
                               )?.name
                             }
-                            {/* [{segments.departureAirportCode}] */}
-                            {/* {airports.find(
-                              (airport) =>
-                                airport.iata === segments.departureAirportCode
-                            )?.city === "Angeles City"
-                              ? "Pampanga (Clark)"
-                              : airports.find(
-                                  (airport) =>
-                                    airport.iata ===
-                                    segments.departureAirportCode
-                                )?.city === "Madras"
-                              ? "Chennai"
-                              : airports.find(
-                                  (airport) =>
-                                    airport.iata ===
-                                    segments.departureAirportCode
-                                )?.city} */}
                           </p>
                           <h4 className="text-[14px]  md:text-[15px]">
                             {segments.departureAirportCode}
@@ -174,13 +157,6 @@ const FilghtDetailsSummary: FC<FilghtDetailsSummaryProps> = ({
                             <h1 className="mt-0 text-center  text-[14px] md:text-[15px] leading-[21.66px]">
                               {convertMinutesToHours(segments.duration)}
                             </h1>
-                            {/* <h1 className="text-[#BDBDBD] text-[12px] md:text-[16px]">
-                              {trip?.segmentss.length.toString() === "1"
-                                ? "Non-stop"
-                                : trip?.segmentss.length.toString() === "2"
-                                ? "1 Stop"
-                                : "2 Stops or More"}
-                            </h1> */}
                           </div>
                           <div className="flex text-[#BDBDBD] text-[15px]  justify-center items-center gap-[1px]">
                             <h1>-------</h1>
@@ -203,27 +179,6 @@ const FilghtDetailsSummary: FC<FilghtDetailsSummaryProps> = ({
                                   airport.iata === segments.arrivalAirportCode
                               )?.name
                             }
-                            {/* {segments.arrivalAirportCode} */}
-                            {/* {
-                              airports.find(
-                                (airport) =>
-                                  airport.iata === segments.arrivalAirportCode
-                              )?.city
-                            } */}
-                            {/* {airports.find(
-                              (airport) =>
-                                airport.iata === segments.arrivalAirportCode
-                            )?.city === "Angeles City"
-                              ? "Pampanga (Clark)"
-                              : airports.find(
-                                  (airport) =>
-                                    airport.iata === segments.arrivalAirportCode
-                                )?.city === "Madras"
-                              ? "Chennai"
-                              : airports.find(
-                                  (airport) =>
-                                    airport.iata === segments.arrivalAirportCode
-                                )?.city} */}
                           </p>
                           <h4 className="text-[14px] md:text-[15px]">
                             {segments.arrivalAirportCode}

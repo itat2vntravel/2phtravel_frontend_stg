@@ -1,9 +1,5 @@
 import Header from "@/components/Header/Header";
-import Image from "next/image";
-
-
 import Styles from "./home.module.css";
-import Link from "next/link";
 
 import { FC } from "react";
 import { cookies } from "next/headers";
@@ -17,7 +13,6 @@ import LoadingFlightSearch from "@/page-modules/FlightSearch/LoadingFlightSearch
 
 import GetPromotion from "@/action/Admin/Promotion/GetPromotion";
 
-import HomeTitle from "@/components/Title/HomeTitle";
 
 export const metadata = {
   title: " 2PH Travel - Your best deal to the Philippines and beyond",

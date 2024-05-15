@@ -39,7 +39,6 @@ const CustomTextField: FC<CustomTextFieldProps> = ({
             type={type}
             name={name}
             autoComplete="off"
-            // className="bg-white mb-4 rounded-lg p-3 focus:outline-none border border-gray-500"
             placeholder={placeholder}
             required={required}
             value={value} // Set value prop
@@ -50,8 +49,6 @@ const CustomTextField: FC<CustomTextFieldProps> = ({
               position: "relative",
               padding: "10px",
             }}
-            // placeholder={"Cardholder name"}
-            // required
           />
         </div>
       </div>

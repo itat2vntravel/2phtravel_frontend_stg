@@ -113,17 +113,6 @@ const PromotionCard: FC<PromotionCardProps> = ({ promotion }) => {
                         setImageOpen(true);
                       }}
                     />
-                    {/* <ImagePreview res={item.image_url} /> */}
-                    {/* <Image
-                      src={Logo}
-                      alt="Logo"
-                      width={200}
-                      height={55}
-                      priority
-                      quality={100}
-                      className="absolute right-[10px] top-[10px] mix-blend-multiply"
-                      // style={{ marginRight: "20px" }}
-                    /> */}
                   </div>
                   {Imageopen && (
                     <Dialog
@@ -139,7 +128,8 @@ const PromotionCard: FC<PromotionCardProps> = ({ promotion }) => {
                         width={140}
                         height={10}
                         priority
-                        layout="responsive"
+                        // layout="responsive"
+                        fill
                         className="hidden lg:block h-full w-full "
                       />
                     </Dialog>

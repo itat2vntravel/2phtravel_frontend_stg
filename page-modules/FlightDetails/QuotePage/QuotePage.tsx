@@ -358,11 +358,6 @@ const QuoteResultPage = ({
                   </GetQuoteButton>
                 </div>
               </form>
-              {/* <div className="mt-3 text-center  w-full ">
-                <Link href={"/flight/search"} className="hover:text-customRed">
-                  Serach Again
-                </Link>
-              </div> */}
               <p className="text-gray-500 text-[12px] mt-4 flex justify-start items-start gap-1 mb-4">
                 <span>*</span> Prices are displayed for reference, contact our
                 team to get better prices via email or wire.

@@ -4,10 +4,6 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { DateValueType } from "react-tailwindcss-datepicker";
 
-// interface DatevalueType {
-//   startDate: Date;
-//   endDate: Date;
-// }
 interface ItemType {
   totalPrice: number;
   mainAirlineCode: string;
@@ -71,12 +67,7 @@ export default async function SearchFlights(
   );
 
   const formatDate = (dateString: any) => {
-    // if (dateString) {
-    //   const [year, month, day] = dateString.split("-");
-    //   // return `${month.padStart(2, "0")}/${day.padStart(2, "0")}/${year}`;
-    //   return `${month.padStart(2, "0")}/${day.padStart(2, "0")}/${year}`;
 
-    // }
     if (dateString) {
       // Convert date string to yyyy-mm-dd format
       if (dateString.includes("-")) {
@@ -360,22 +351,12 @@ export default async function SearchFlights(
         const uniqueAirlineCodes: Set<string> = new Set();
 
         itemsToRender?.forEach((routing) => {
-          // routing.trips.forEach((trip: TripType) => {
-          //   trip.segments.forEach((segment: SegmentsType) => {
-          // Collect airline codes
+   
           uniqueAirlineCodes.add(routing.mainAirlineCode);
-          // uniqueAirlineCodes.add(segment.airlineCode);
-          //   });
-          // });
+   
         });
 
-        // // Convert Set to array
-        // const airlineCodes: string[] = Array.from(uniqueAirlineCodes);
-        // if (airline === "") {
-        //   cookies().set("airlineCodes", JSON.stringify(airlineCodes), {
-        //     httpOnly: true,
-        //   });
-        // }
+
       }
     } else {
       cookies().set("user_id", searchResult?.customerSessionId, {

@@ -95,7 +95,7 @@ const HeroSection: FC<BannerDataInterface> = ({ bannerdata }) => {
 
       formData.append("image", filePath[0]);
 
-      formData.append("page", "airline");
+      formData.append("page", "airline-offers");
       formData.append("section", "Banner");
 
       const response = await Addbanner(formData);
@@ -135,7 +135,7 @@ const HeroSection: FC<BannerDataInterface> = ({ bannerdata }) => {
     if (apiImage.length !== 0) {
       formData.append("image", apiImage[0]);
     }
-    formData.append("page", "airline");
+    formData.append("page", "airline-offers");
     formData.append("section", "Banner");
     const response = await Updatebanner(edit, formData);
     reactHotToast.success("Banner Updated Successfully", {
@@ -145,7 +145,7 @@ const HeroSection: FC<BannerDataInterface> = ({ bannerdata }) => {
 
     setTimeout(() => {
       setUpdateRecord(false);
-      router.push("/admin/airline");
+      router.push("/admin/airline-offers");
       setLoading(false);
     }, 1000);
   };
@@ -169,7 +169,7 @@ const HeroSection: FC<BannerDataInterface> = ({ bannerdata }) => {
       setLoading(false);
       setDeleteOpen(false);
     }, 1000);
-    router.push("/admin/airline");
+    router.push("/admin/airline-offers");
   };
 
   const handleFileDrop = (e: any) => {
@@ -358,18 +358,6 @@ const HeroSection: FC<BannerDataInterface> = ({ bannerdata }) => {
                   height={200}
                 />
               )}
-
-              {/* <div className="mt-5">
-                <label htmlFor="dropdown">Select Section</label>
-                <select
-                  className="w-[100%] px-4 py-4 border rounded-2xl "
-                  id="dropdown"
-                  value={PageValue}
-                  onChange={handlePageChange}
-                >
-                  <option value={"Banner"}>{"Banner"}</option>
-                </select>
-              </div> */}
             </DialogContent>
             <DialogActions>
               <Button
@@ -400,7 +388,7 @@ const HeroSection: FC<BannerDataInterface> = ({ bannerdata }) => {
               setUpdateRecord(false);
               setfileImage("");
               setFilePath([]);
-              router.push("/admin/airline");
+              router.push("/admin/airline-offers");
             }}
           >
             <div className="p-12 ">
@@ -434,18 +422,6 @@ const HeroSection: FC<BannerDataInterface> = ({ bannerdata }) => {
                   height={200}
                 />
               )}
-
-              {/* <div className="mt-5">
-                <label htmlFor="dropdown">Section</label>
-                <select
-                  className="w-[100%] px-4 py-4 border rounded-2xl "
-                  id="dropdown"
-                  value={PageValue}
-                  onChange={handlePageChange}
-                >
-                  <option value="Banner">Banner</option>
-                </select>
-              </div> */}
 
               <div className="flex gap-2 mt-6">
                 <CustomButton
@@ -482,44 +458,16 @@ const HeroSection: FC<BannerDataInterface> = ({ bannerdata }) => {
               width={140}
               height={10}
               priority
-              layout="responsive"
+              // layout="responsive"
               className="hidden lg:block h-full w-full "
             />
           </Dialog>
         )}
         {deleteOpen && (
-          // <Dialog
-          //   open={deleteOpen}
-          //   onClose={() => setDeleteOpen(false)}
-          //   aria-labelledby="alert-dialog-title"
-          //   aria-describedby="alert-dialog-description"
-          // >
-          //   <DialogTitle id="alert-dialog-title">
-          //     {"Are you sure you want to Delete?"}
-          //   </DialogTitle>
-          //   <DialogContent></DialogContent>
-          //   <DialogActions>
-          //     <Button
-          //       onClick={() => setDeleteOpen(false)}
-          //       className=" border-[#142B51] border-solid text-[#142B51] flex gap-[5px] justify-center rounded-md items-center w-[20%]"
-          //     >
-          //       NO
-          //     </Button>
-          //     <Button
-          //       onClick={DeleteBannerApi}
-          //       className=" flex hover:bg-red-500 gap-[5px] justify-center rounded-md items-center bg-[#142B51] text-white border-none w-[20%]"
-          //       variant="contained"
-          //       style={{ background: "#142B51" }}
-          //     >
-          //       {loading ? <PulseLoader color="white" /> : "Yes"}
-          //     </Button>
-          //   </DialogActions>
-          // </Dialog>
           <ModalPopup
             open={deleteOpen}
             setopen={setDeleteOpen}
             note={""}
-            //   deletename={DeleteData.email}
             handleDelete={DeleteBannerApi}
             loading={loading}
           />

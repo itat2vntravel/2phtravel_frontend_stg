@@ -14,7 +14,6 @@ import GotoBackImage from "@/components/Images/GotoBackImage";
 import { formUrlQuery } from "@/utils/formUrlQuery";
 import airlines from "airline-codes";
 import airports from "@nwpr/airport-codes";
-// import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import baggageIcon from "../../public/baggage-icon-blue.png";
 import LoadingPage from "@/app/loading";
@@ -25,7 +24,6 @@ interface Request {
   type: string;
   departureDate: string;
   returnDate?: string;
-  // adults: number;
   adults?: number;
   depart_time?: string;
   airline?: string;
@@ -165,9 +163,6 @@ const FlightCard: FC<FlightCardProps> = ({
   const [openDetailsIndex, setOpenDetailsIndex] = useState<number | null>(null); // State to track open details index
   const [ErrorMessage, setErrorMessage] = useState<string>("NO RESULTS FOUND!");
 
-  // const totalItems: number = data?.airTicketListResponse?.routings.length || 0;
-  // const totalPages: number = Math.ceil(totalItems / ItemsPerPage);
-
   const {
     departure,
     destination,
@@ -180,33 +175,21 @@ const FlightCard: FC<FlightCardProps> = ({
     ModifySearchStore,
   } = useModifySearch((state) => state);
 
-  // if (isLoading) {
-  //   return <div><LoadingPage/></div>;
-  // }
-  // await new Promise(resolve => setTimeout(resolve, 2000));
   useEffect(() => {
     ModifySearchStore({
       modifyStatus: true,
     });
-    // let newUrl;
-    // newUrl = formUrlQuery({
-    //   params: SearchParams.toString(),
-    //   keysToRemove: ["airline", "stop", "departtime"],
-    // });
-    // router.push(newUrl, { scroll: false });
+
   }, [ModifySearchStore]);
 
   useEffect(() => {
     const userId = String(localStorage.getItem("guestuserid"));
-    // const adults = String(localStorage.getItem("adults"));
     const adultsCount = adults as number;
     const children = childrenCount as number;
-    // const children = Passenger.Children;
-    const airline = SearchParams.get("airline") as string;
+    const airline = SearchParams.get("airline-offers") as string;
 
     const departtime = SearchParams.get("departtime") as string;
     const stop = SearchParams.get("stop") as string;
-    // const GetStop = SearchParams.get("stop");
 
     if (stop === "non-stop") {
       setCurrentPage(1);
@@ -240,7 +223,6 @@ const FlightCard: FC<FlightCardProps> = ({
       );
       // }, 2000);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     departureAirport,
     destinationAirport,
@@ -298,7 +280,6 @@ const FlightCard: FC<FlightCardProps> = ({
         depart_time: departtime || "",
         airline: airline || "",
         trips: trips || undefined,
-        // stop: stop || "",
         id: userId || undefined,
         name: !userId ? firstName || undefined : undefined,
         email: !userId ? email || undefined : undefined,
@@ -367,8 +348,7 @@ const FlightCard: FC<FlightCardProps> = ({
     } catch (error) {
       setloading(false);
       console.error("Flight search failed:", error);
-      // You can handle the error here, e.g., show a notification to the user
-      throw error; // Rethrow the error so that the caller can handle it if needed
+      throw error;
     }
   };
 
@@ -560,19 +540,6 @@ const FlightCard: FC<FlightCardProps> = ({
                       </div>
                     </div>
                     <div className="grid grid-cols-12" key={index}>
-                      {/* <div className="col-span-12 md:col-span-2">
-                        <h1 className="text-[15px] md:text-[16px] text-customBlue">
-                          Flight :{Segment.airlineCode} {""}
-                          {Segment.flightNumber}
-                        </h1>
-                        <h4 className="flex font-semibold items-center gap-2 capitalize text-customBlue  ">
-                          {cabin === "E"
-                            ? "Economy"
-                            : cabin === "F"
-                            ? "First Class"
-                            : "Business"}
-                        </h4>
-                      </div> */}
                       <div className="col-span-12 md:col-span-3 flex mx-2">
                         <div className="flex flex-col ">
                           <h4 className="text-[14px] md:text-[15px]">
@@ -582,30 +549,13 @@ const FlightCard: FC<FlightCardProps> = ({
                             {formatTime(Segment.departureTime)}
                           </h4>
                           <p className="text-[12px]">
-                            {/* {Segment.departureAirportCode} */}
                             {
                               airports.find(
                                 (airport) =>
                                   airport.iata === Segment.departureAirportCode
                               )?.name
                             }
-                            {/* [{Segment.departureAirportCode}] */}
-                            {/* {airports.find(
-                              (airport) =>
-                                airport.iata === Segment.departureAirportCode
-                            )?.city === "Angeles City"
-                              ? "Pampanga (Clark)"
-                              : airports.find(
-                                  (airport) =>
-                                    airport.iata ===
-                                    Segment.departureAirportCode
-                                )?.city === "Madras"
-                              ? "Chennai"
-                              : airports.find(
-                                  (airport) =>
-                                    airport.iata ===
-                                    Segment.departureAirportCode
-                                )?.city} */}
+                         
                           </p>
                           <h4 className="text-[14px]  md:text-[15px]">
                             {Segment.departureAirportCode}
@@ -621,13 +571,7 @@ const FlightCard: FC<FlightCardProps> = ({
                             <h1 className="mt-0 text-center  text-[14px] md:text-[15px] leading-[21.66px]">
                               {convertMinutesToHours(Segment.duration)}
                             </h1>
-                            {/* <h1 className="text-[#BDBDBD] text-[12px] md:text-[16px]">
-                              {trip?.segments.length.toString() === "1"
-                                ? "Non-stop"
-                                : trip?.segments.length.toString() === "2"
-                                ? "1 Stop"
-                                : "2 Stops or More"}
-                            </h1> */}
+                           
                           </div>
                           <div className="flex text-[#BDBDBD] text-[15px]  justify-center items-center gap-[1px]">
                             <h1>-------</h1>
@@ -650,27 +594,6 @@ const FlightCard: FC<FlightCardProps> = ({
                                   airport.iata === Segment.arrivalAirportCode
                               )?.name
                             }
-                            {/* {Segment.arrivalAirportCode} */}
-                            {/* {
-                              airports.find(
-                                (airport) =>
-                                  airport.iata === Segment.arrivalAirportCode
-                              )?.city
-                            } */}
-                            {/* {airports.find(
-                              (airport) =>
-                                airport.iata === Segment.arrivalAirportCode
-                            )?.city === "Angeles City"
-                              ? "Pampanga (Clark)"
-                              : airports.find(
-                                  (airport) =>
-                                    airport.iata === Segment.arrivalAirportCode
-                                )?.city === "Madras"
-                              ? "Chennai"
-                              : airports.find(
-                                  (airport) =>
-                                    airport.iata === Segment.arrivalAirportCode
-                                )?.city} */}
                           </p>
                           <h4 className="text-[14px] md:text-[15px]">
                             {Segment.arrivalAirportCode}
@@ -745,21 +668,13 @@ const FlightCard: FC<FlightCardProps> = ({
                     </div>
 
                     <div className="flex flex-col pl-[20px] items-center">
-                      {/* <h6>
-                        Weight Specified:
-                        {routing.rules.baggages[0]?.weightSpecified === true
-                          ? "Yes"
-                          : "No"}
-                      </h6> */}
                       <h6>
                         Weight : {""}
                         {routing.rules.baggages[0]?.weight}
                         {routing.rules.baggages[0]?.unit}
                       </h6>
-                      {/* <h6>Unit:{routing.rules.baggages[0]?.unit}</h6> */}
+                     
                     </div>
-
-                    {/* <h6>Trip:{routing.rules.baggages[0]?.segments}</h6> */}
                   </div>
                 )
               ) : (
@@ -921,11 +836,6 @@ const FlightCard: FC<FlightCardProps> = ({
                         <div className="col-span-12 md:col-span-3">
                           <div className="mx-2 flex flex-col justify-center ">
                             <p className="text-[14px] md:text-[15px]">
-                              {/* {
-                              airports.find(
-                                (airport) => airport.iata === item.destination
-                              )?.name
-                            } */}
                               {item.destination}
                             </p>
                             <p>{formatTime(lastSegment?.arrivalTime)}</p>
@@ -938,7 +848,6 @@ const FlightCard: FC<FlightCardProps> = ({
                 <div>
                   <button
                     className="text-customBlue cursor-pointer mt-2 font-semibold hidden md:flex items-center"
-                    // onClick={handleopen}
                     onClick={() => toggleDetails(index)}
                   >
                     {openDetailsIndex === index ? (
@@ -972,7 +881,6 @@ const FlightCard: FC<FlightCardProps> = ({
                   />
                   <button
                     className="text-customRed cursor-pointer  mt-2 font-semibold md:hidden flex items-center"
-                    // onClick={handleopen}
                     onClick={() => toggleDetails(index)}
                   >
                     {openDetailsIndex === index ? (
@@ -1109,11 +1017,6 @@ const FlightCard: FC<FlightCardProps> = ({
                         <div className="col-span-12 md:col-span-3">
                           <div className="mx-2 flex flex-col justify-center ">
                             <p className="text-[14px] md:text-[15px]">
-                              {/* {
-                              airports.find(
-                                (airport) => airport.iata === item.destination
-                              )?.name
-                            } */}
                               {item.destination}
                             </p>
                             <p>{formatTime(lastSegment?.arrivalTime)}</p>
@@ -1297,11 +1200,7 @@ const FlightCard: FC<FlightCardProps> = ({
                         <div className="col-span-12 md:col-span-3">
                           <div className="mx-2 flex flex-col justify-center ">
                             <p className="text-[14px] md:text-[15px]">
-                              {/* {
-                              airports.find(
-                                (airport) => airport.iata === item.destination
-                              )?.name
-                            } */}
+                           
                               {item.destination}
                             </p>
                             <p>{formatTime(lastSegment?.arrivalTime)}</p>
@@ -1395,15 +1294,6 @@ const FlightCard: FC<FlightCardProps> = ({
       }
 
       if (startPage < 1) {
-        // paginationItems.push(
-        //   <button
-        //     key="first"
-        //     onClick={goToFirstPage}
-        //     className="mx-1 px-3 py-1  rounded-[10px]  border-[#DCDCDC] border-[2px]"
-        //   >
-        //     1
-        //   </button>
-        // );
         if (startPage > 2) {
           paginationItems.push(
             <span
@@ -1473,14 +1363,6 @@ const FlightCard: FC<FlightCardProps> = ({
 
     router.push(newUrl, { scroll: false });
     setCurrentPage(1);
-    // setTimeout(() => {
-    //   ModifySearchStore({
-    //     modifyStatus: true,
-    //   });
-    // }, 5000);
-    // ModifySearchStore({
-    //   modifyStatus: true,
-    // });
   };
   return (
     <>
@@ -1509,14 +1391,6 @@ const FlightCard: FC<FlightCardProps> = ({
             >
               Highest
             </div>
-            {/* <div
-              className={`p-3 font-semibold text-center text-[15px] md:text-[30px] border-r cursor-pointer ${
-                Price === "Best" ? "bg-customBlue text-white" : ""
-              }`}
-              onClick={() => handlePriceFilter("Best")}
-            >
-              Best
-            </div> */}
           </div>
           {renderItems()}
           {/* Render pagination buttons */}

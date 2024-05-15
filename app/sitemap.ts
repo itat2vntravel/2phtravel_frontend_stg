@@ -45,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${process.env.FRONTEND_URL}help-support`,
+      url: `${process.env.FRONTEND_URL}guidance`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.5,

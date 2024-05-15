@@ -10,13 +10,8 @@
 
 .main input::placeholder {
   color: grey;
-  /* border: 2px solid blue; */
-  /* padding-top: 50px; */
-  /* background-color: red; */
 }
-/* .main input[type="date"]::-webkit-datetime-edit-text {
-  color: grey;
-} */
+
 .main input[type="date"]::-webkit-datetime-edit-month-field {
   color: grey;
 }

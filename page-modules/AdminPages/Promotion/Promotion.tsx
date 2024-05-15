@@ -172,26 +172,6 @@ const PromotionPage: React.FC<PromotionDataInterface> = ({
     }
   };
 
-  // const handleFileChange = (event: any) => {
-  //   const file = event.target.files;
-  //   const filesdata = event.target.files[0];
-  //   if (file) {
-  //     if (filesdata?.size <= MAX_IMAGE_SIZE_BYTES) {
-  //       const objectURL = URL.createObjectURL(file[0]);
-  //       setfileImage(objectURL);
-  //       setFilePath(file);
-  //     } else {
-  //       reactHotToast.error("Image size exceeds 10MB limit", {
-  //         position: "top-right",
-  //         duration: 3000,
-  //       });
-
-  //       event.target.value = null;
-  //     }
-  //   } else {
-  //     setFilePath([]);
-  //   }
-  // };
   const handleFileChange = async (event: any) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -676,10 +656,6 @@ const PromotionPage: React.FC<PromotionDataInterface> = ({
                 onClick={() => handleClick()}
               >
                 <p>Drag & Drop files here or click to select</p>
-                {/* <p className="text-[12px]">
-              *For better website quality we suggest to use images with 640x640
-              resolution (below 10Mb)*
-            </p> */}
                 <input
                   type="file"
                   id="fileInput"

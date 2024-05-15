@@ -1,4 +1,4 @@
-import Review from "@/page-modules/FlightSearch/ReviewSlider/Review";
+import Review from "@/page-modules/ReviewSlider/Review";
 
 
 function PeopleReview()

@@ -88,22 +88,6 @@ const SubscribedDetails: React.FC<BookingInterace> = ({ userdata }) => {
       setLoading(false);
     }
   };
-  // const filteredData =
-  //   searchinputValue.trim() !== ""
-  //     ? userdata.results
-  //         .filter((user: { email: string }) =>
-  //           user.email
-  //             .toLowerCase()
-  //             .includes(searchinputValue.trim().toLowerCase())
-  //         )
-
-  //         .sort((a, b) => b.newsletter_id - a.newsletter_id)
-  //     : userdata.results.sort((a, b) => b.newsletter_id - a.newsletter_id);
-
-  // const filteredData = userdata.results.sort(
-  //   (a, b) => b.newsletter_id - a.newsletter_id
-  // );
-
   const totalItems: number = filterdCount !== 0 ? filterdCount : userdata.count;
   const totalPages: number = Math.ceil(totalItems / ItemsPerPage);
   const goToPage = (pageNumber: number) => {
@@ -148,15 +132,6 @@ const SubscribedDetails: React.FC<BookingInterace> = ({ userdata }) => {
       }
 
       if (startPage < 1) {
-        // paginationItems.push(
-        //   <button
-        //     key="first"
-        //     onClick={goToFirstPage}
-        //     className="mx-1 px-3 py-1  rounded-[10px]  border-[#DCDCDC] border-[2px]"
-        //   >
-        //     1
-        //   </button>
-        // );
         if (startPage > 2) {
           paginationItems.push(
             <span
@@ -348,9 +323,7 @@ const SubscribedDetails: React.FC<BookingInterace> = ({ userdata }) => {
                             email: res.email,
                           });
                         }}
-                        // href={`?id=${res.enquiry_id}`}
                       >
-                        {/* <MdDelete className="text-[22px] ml-2" /> */}
                         Delete
                       </button>
                     </td>
@@ -365,6 +338,7 @@ const SubscribedDetails: React.FC<BookingInterace> = ({ userdata }) => {
                   height={100}
                   alt="loader"
                   className="w-[950px] h-[450px]  rounded-full"
+                  unoptimized
                 />
               </div>
             ) : (

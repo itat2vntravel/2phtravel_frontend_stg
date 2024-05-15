@@ -84,10 +84,7 @@ const Brands: FC<BrandsProps> = () => {
   return (
     <>
       <div
-        // className="border-t border-[#ADADAD]"
         style={{
-          // background: "#F7F4F4",
-
           display: quotepopup == "open" ? "none" : "block",
         }}
       >

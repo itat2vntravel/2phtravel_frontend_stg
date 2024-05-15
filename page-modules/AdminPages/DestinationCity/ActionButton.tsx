@@ -268,12 +268,6 @@ const ActionButton: React.FC<ActionInterfae> = ({ response }) => {
                         Cancel
                       </Button>
                       <LoaderButton>Update</LoaderButton>
-                      {/* <CustomButton
-                        text={"Submit"}
-                        loading={loading}
-                        // onClick={handleSumbit}
-                        customclass="bg-[#142B51] flex gap-[5px] justify-center rounded-md items-center text-white border-none w-[20%]"
-                      /> */}
                     </div>
                   </form>
                 </div>

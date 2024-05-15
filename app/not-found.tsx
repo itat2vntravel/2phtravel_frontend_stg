@@ -51,13 +51,6 @@ const NotFoundResult: FC<NotfoundProps> = ({ searchParams }) => {
             routering={false}
           />
         </a>
-        {/* <Link href={"/"}>
-          <CustomButton
-            text="Go to Home Page"
-            customclass="mt-5 mb-5 p-3"
-            colored="true"
-          />
-        </Link> */}
       </div>
     </>
   );

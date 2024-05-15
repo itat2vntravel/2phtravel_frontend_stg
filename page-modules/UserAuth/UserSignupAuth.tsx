@@ -101,22 +101,6 @@ export default function UserSignupAuth() {
             required={true}
           />
         </div>
-        {/* <div className="md:flex gap-2">
-          <input
-            type="text"
-            className="w-full bg-white border border-gray-500 mb-2 rounded-md p-3 focus:outline-none"
-            placeholder="Enter your First Name"
-            name="first_name"
-            required
-          />
-          <input
-            type="text"
-            className="w-full bg-white border border-gray-500  mb-2 rounded-md p-3 focus:outline-none"
-            placeholder="Enter your Last Name"
-            name="last_name"
-            required
-          />
-        </div> */}
         <CustomTextField
           labeltext="Email"
           type="text"
@@ -161,23 +145,7 @@ export default function UserSignupAuth() {
             required={true}
           />
         </div>
-        {/* <div className="md:flex gap-2">
-          <input
-            type="password"
-            className="w-full bg-white border border-gray-500 mb-4 rounded-md p-3 focus:outline-none"
-            placeholder="Enter your Password"
-            name="password"
-            required
-          />
-          <input
-            type="password"
-            className="w-full bg-white border border-gray-500  mb-4 rounded-md p-3 focus:outline-none"
-            placeholder="ReEnter your confirm Password"
-            name="confirm_password"
-            required
-          />
-        </div> */}
-
+      
         {/* Keep me logged in checkbox  */}
         <div className="mt-[10px] flex items-center">
           <FormGroup>

@@ -87,13 +87,7 @@ const UserVerfiyOtp = () => {
           }
         }}
       >
-        {/* <input
-          type="text"
-          className="w-full bg-white mb-4 rounded-md p-3 mt-[20px] focus:outline-none border border-gray-500 "
-          placeholder="Enter your OTP"
-          name="otp"
-          required
-        /> */}
+
         <CustomTextField
           labeltext="Otp"
           type="text"
@@ -104,29 +98,6 @@ const UserVerfiyOtp = () => {
 
         <FormButton>Verify OTP</FormButton>
       </form>
-      {/* <div className="flex justify-center mt-5">
-        <form
-          action={async () => {
-            const response = await resendOtp();
-            if (response?.error) {
-              // toast.error(response.error);
-              reactHotToast.error(response.error, {
-                position: "top-right",
-                duration: 1000,
-              });
-            }
-            if (response?.success) {
-              // toast.success(response.success);
-              reactHotToast.success(response.success, {
-                position: "top-right",
-                duration: 1000,
-              });
-            }
-          }}
-        >
-          <FormButton>Resend OTP</FormButton>
-        </form>
-      </div> */}
       <div className="mt-1 md:mt-[20px]">
         <Typography
           variant="h6"

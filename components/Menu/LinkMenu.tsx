@@ -12,14 +12,14 @@ export interface MenuProps {
 
 const LinkMenu: FC<MenuProps> = ({ title, hrefpath, color }) => {
   const router = usePathname();
-  const selectedDestination = router.includes("/airline")
+  const selectedDestination = router.includes("/airline-offers")
     ? "!text-customRed"
     : color;
   const selectedTheme = router.includes("/promotion")
     ? "!text-customRed"
     : color;
   const selectedFlights = router == "/" ? "red" : color;
-  const selectedHelpSupport = router.includes("/help-support") ? "red" : color;
+  const selectedHelpSupport = router.includes("/guidance") ? "red" : color;
 
   return (
     <div>
@@ -37,18 +37,6 @@ const LinkMenu: FC<MenuProps> = ({ title, hrefpath, color }) => {
           }
           `}
           href={hrefpath}
-          // style={{
-          //   color:
-          //     title == "Top Airline Deals"
-          //       ? selectedDestination
-          //       : title == "Promotion"
-          //       ? selectedTheme
-          //       : title == "Flights"
-          //       ? selectedFlights
-          //       : color,
-          //   height: "40px",
-          //   // marginBottom: title === "Promotion" ? "-10px" : "",
-          // }}
         >
           {title}
         </Link>

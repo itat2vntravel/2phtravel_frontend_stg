@@ -26,13 +26,6 @@ const images = [
     place: "Lahore",
     image: DefaultProfileImage01,
   },
-  // {
-  //   imgPath:
-  //     "Booking my flight with 2PH Travel was an absolute breeze! From seamless navigation on their user-friendly platform. Their excellent customer service team was also there every step of the way to assist with any queries I had. Thanks to 2PH Travel, my travel plans took off without a hitch!",
-  //   user: "user 1",
-  //   place: "Lahore",
-  //   image: DefaultProfileImage01,
-  // },
   {
     imgPath:
       "When it comes to booking flights, 2PH Travel is my go-to choice. Their extensive selection of airlines and routes ensures that I can always find the most convenient option for my travels. Plus, their commitment to customer satisfaction shines through their responsive support team, who are always ready to assist.",

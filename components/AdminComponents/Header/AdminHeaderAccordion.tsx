@@ -35,7 +35,7 @@ const AdminHeaderAccordion: React.FC<Props> = ({
       accordion === "Banner" &&
         (pathname === "/admin/homebanner" ||
           pathname === "/admin/homeoffer" ||
-          pathname === "/admin/airline")
+          pathname === "/admin/airline-offers")
         ? accordion
         : accordion === "Destination" &&
           (pathname === "/admin/flight-deals" ||
@@ -52,7 +52,7 @@ const AdminHeaderAccordion: React.FC<Props> = ({
           ? panel &&
             (pathname === "/admin/homebanner" ||
               pathname === "/admin/homeoffer" ||
-              pathname === "/admin/airline")
+              pathname === "/admin/airline-offers")
             ? panel
             : panel &&
               (pathname === "/admin/flight-deals" ||
@@ -70,9 +70,6 @@ const AdminHeaderAccordion: React.FC<Props> = ({
         boxShadow: "none",
         padding: "0px",
       }}
-      // expanded={expanded === accordion}
-      // onChange={handleChange(accordion)}
-      // onClick={handleChange(accordion)}
     >
       <AccordionSummary
         expandIcon={

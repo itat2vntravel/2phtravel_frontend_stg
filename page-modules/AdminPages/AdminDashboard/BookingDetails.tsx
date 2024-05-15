@@ -40,9 +40,7 @@ const BookingDetails = () => {
       <div className="flex justify-between flex-col md:items-center items-start">
         <div className="border w-full bg-white mt-4">
           <h1 className="mb-3 pl-2 pt-2 ">USER DETAILS</h1>
-          {/* <div className="p-3 bg-gray-300 flex justify-center text-white">
-            <h4>USER DETAILS</h4>
-          </div> */}
+
           <div className="grid grid-cols-12 gap-4 p-4 pt-1">
             <div className="col-span-6">
               <h4 className="mb-4">
@@ -112,11 +110,7 @@ const BookingDetails = () => {
             </div>
           </div>
           <hr></hr>
-          {/* {
-            <div className="flex justify-end items-center p-5">
-              Total Price : <h2 className="text-2xl">$899.00*</h2>
-            </div>
-          } */}
+
         </div>{" "}
         <div className=" w-full bg-white mt-4 p-4">
           <div className="p-3 bg-customBlue flex justify-center text-white">

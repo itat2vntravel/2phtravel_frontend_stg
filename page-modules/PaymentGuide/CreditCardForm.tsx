@@ -558,13 +558,6 @@ const CreditCardForm = () => {
             <SignaturePad onSave={handleSave} />
             <div className="col-span-12">
               {" "}
-              {/* <CustomButton
-                type="submit"
-                colored="true"
-                customclass="w-full"
-                loading={loading}
-                text="Submit"
-              /> */}
               <LoaderButton>Submit</LoaderButton>
             </div>
           </div>

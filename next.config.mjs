@@ -1,7 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["localhost","188.166.244.16", "2phadmin-stg.arunmadhuk.in"],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: '2phadmin-stg.arunmadhuk.in',
+        pathname: '**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        pathname: '**',
+      },
+      {
+        protocol: 'http',
+        hostname: '188.166.244.16',
+        pathname: '**',
+      },
+    ],
   },
   env: {
       FRONTEND_URL: "https://2ph-stg.saranyag.in/",

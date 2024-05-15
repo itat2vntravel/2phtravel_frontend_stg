@@ -33,7 +33,7 @@ const Airlinedeals = ({ userId }: any) => {
   const navigate = useRouter();
   const searchParams = useSearchParams();
   const quotepopup = searchParams.get("quotepopup");
-  const Airlinepopup = searchParams.get("airline") || undefined;
+  const Airlinepopup = searchParams.get("airline-offers") || undefined;
   const flightlist: FlightInterface[] = [
     {
       logo: Philippine,

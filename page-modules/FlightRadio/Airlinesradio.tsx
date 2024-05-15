@@ -17,9 +17,9 @@ export default function Airlinesradio({ airlineCodes }: any) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const PathName = usePathname();
-  // const airlinesearch = searchParams.get("airline");
+
   const { modifyStatus, ModifySearchStore } = useModifySearch((state) => state);
-  // const [checkedAirlines, setCheckedAirlines] = useState<string[]>([]);
+ 
   const [checkedAirlines, setCheckedAirlines] = useState<string[]>([]);
   const [uncheckedAirlines, setUncheckedAirlines] = useState<string[]>([]);
 
@@ -55,15 +55,6 @@ export default function Airlinesradio({ airlineCodes }: any) {
       updatedUncheckedAirlines.push(airlineCode);
     }
 
-    // Prevent unchecking the last checked checkbox
-    // if (
-    //   updatedCheckedAirlines.length === 0 &&
-    //   airlineCode !== "All" &&
-    //   !isChecked
-    // ) {
-    //   return;
-    // }
-
     setCheckedAirlines(updatedCheckedAirlines);
     setUncheckedAirlines(updatedUncheckedAirlines);
 
@@ -84,35 +75,11 @@ export default function Airlinesradio({ airlineCodes }: any) {
     }
     router.push(newUrl, { scroll: false });
 
-    // setTimeout(() => {
-    //   ModifySearchStore({
-    //     modifyStatus: true,
-    //   });
-    // }, 5000);
   };
 
   return (
     <>
       <FormGroup>
-        {/* <FormControlLabel
-          key="All"
-          value="All"
-          className={Style.labelfontSize}
-          control={
-            <Checkbox
-              sx={{
-                "&.Mui-checked": {
-                  color: "red",
-                },
-              }}
-              value={"All"}
-              checked={checkedAirlines?.length === airlineCodes?.length}
-              onChange={handleCheckboxChange}
-              className={Style.FlightPageRadioButton}
-            />
-          }
-          label="All"
-        /> */}
         {/* Dynamically generated options from airlineCodesArry */}
         {airlineCodes &&
           airlineCodes?.map((airlineCode: string) => (

@@ -44,12 +44,7 @@ interface SegmentsType {
   cabin: string;
 }
 export default async function FlightSearchResult(req: Request) {
-  // cookies().set("adults", JSON.stringify(req.adults), {
-  //   httpOnly: true,
-  // });
-  // cookies().set("children", JSON.stringify(req.children), {
-  //   httpOnly: true,
-  // });
+
   try {
     const response = await axios.post(
       `${process.env.REACT_APP_API_BASEURL}flight/search-flights/`,
@@ -58,17 +53,13 @@ export default async function FlightSearchResult(req: Request) {
 
     const itemsToRender: ItemType[] | undefined =
       response?.data.airTicketListResponse?.routings.slice();
-    // const airlineCodes: string[] = [];
-    // Initialize a Set to store unique airline codes
+
     const uniqueAirlineCodes: Set<string> = new Set();
 
     itemsToRender?.forEach((routing) => {
-      // routing.trips.forEach((trip: TripType) => {
-      // trip.segments.forEach((segment: SegmentsType) => {
-      // Collect airline codes
+
       uniqueAirlineCodes.add(routing.mainAirlineCode);
-      //   });
-      // });
+
     });
 
     // Convert Set to array

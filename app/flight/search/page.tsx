@@ -37,7 +37,7 @@ const FlightSearchpage: FC<FlightSearchProps> = async ({ searchParams }) => {
   const heroBanner = await HeroSectionApi();
 
   const userId = cookies().get("user_id")?.value || "";
-
+console.log(userId)
   const departureAirport = cookies().get("departureAirport")?.value
     ? JSON.parse(cookies().get("departureAirport")?.value || "")
     : undefined;
@@ -160,16 +160,7 @@ const FlightSearchpage: FC<FlightSearchProps> = async ({ searchParams }) => {
                   Stops
                 </h1>
                 <Flightradio />
-                {/* line design */}
-                {/* <div className="my-4">
-                  <div
-                    style={{
-                      flex: 1,
-                      height: "1px",
-                      backgroundColor: "#334851",
-                    }}
-                  ></div>
-                </div> */}
+         
                 {airlineCodes && airlineCodes.length !== 0 && (
                   <h1 className="text-[16px] md:text-[20px] text-[#152D54] mt-2">
                     Airlines

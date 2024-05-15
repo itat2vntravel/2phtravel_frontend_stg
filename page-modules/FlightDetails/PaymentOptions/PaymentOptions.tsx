@@ -16,11 +16,10 @@ import useBookingInfo from "@/store/FlightBooking";
 import useSearchFlight from "@/store/flightSearchStore";
 import BookingFormApi from "@/action/booknow/booknow";
 import { PulseLoader } from "react-spinners";
-import { toast as reactHotToast, Toaster } from "react-hot-toast";
+
 import { redirect, useRouter, useSearchParams } from "next/navigation";
 import Swal from "sweetalert2";
 import useBookingQuote from "@/store/BookingQuote";
-import SignaturePad from "@/components/SignaturePad/SignaturePad";
 import CreateBookFlight from "@/action/booknow/Createbookflightnow";
 
 interface CustomTextFieldProps {
@@ -64,7 +63,6 @@ const CustomTextField: FC<CustomTextFieldProps> = ({
             type={type}
             name={name}
             autoComplete="off"
-            // className="bg-white mb-4 rounded-lg p-3 focus:outline-none border border-gray-500"
             placeholder={placeholder}
             required={required}
             disabled={readonly}
@@ -76,8 +74,6 @@ const CustomTextField: FC<CustomTextFieldProps> = ({
               position: "relative",
               padding: "10px",
             }}
-            // placeholder={"Cardholder name"}
-            // required
           />
         </div>
       </div>
@@ -171,8 +167,6 @@ const PaymentOptions: FC<DataType> = ({ type, userId }) => {
   useEffect(() => {
     updateBookingInfoStore({
       card_holder_name: formData.card_holder_name,
-      // contact_phone: formData.contact_phone,
-      // contact_email: formData.contact_email,
       reservation_code: formData.reservation_code,
       card_number: formData.card_number,
       cvv: formData.cvv,
@@ -320,10 +314,6 @@ const PaymentOptions: FC<DataType> = ({ type, userId }) => {
       }
     } else {
       if (
-        // departure &&
-        // destination &&
-        // departure_date &&
-        // return_date &&
         !isEmptyOrNull &&
         Username &&
         contact_phone &&
@@ -409,8 +399,6 @@ const PaymentOptions: FC<DataType> = ({ type, userId }) => {
       }).then((result) => {
         if (result.isConfirmed) {
           router.replace(`/previewpage?token=${response.token}`);
-
-          // router.push(`/previewpage?token=${response.token}`);
         }
       });
       updateBookingInfoStore({
@@ -453,13 +441,6 @@ const PaymentOptions: FC<DataType> = ({ type, userId }) => {
     formData.append("country", country);
     formData.append("state", state);
     formData.append("zip_code", zip_code);
-    // formData.append("driving_license", filePath[0]);
-    // if (signatureText) {
-    //   formData.append("card_holder_signature", signatureText);
-    // }
-    // if (signatureFile) {
-    //   formData.append("signature", signatureFile);
-    // }
 
     const response = await CardpaymentApi(formData);
 
@@ -520,14 +501,6 @@ const PaymentOptions: FC<DataType> = ({ type, userId }) => {
     const response = await BookingFormApi(req);
     if (payment_method === "FreeFareHold") {
       if (response.message) {
-        // Swal.fire({
-        //   title: response.message,
-        //   icon: "success",
-        // });
-        // // setTimeout(() => {
-        // router.push("/BookingStatus");
-        // // }, 2000);
-
         setloading(false);
 
         updateBookingInfoStore({
@@ -563,43 +536,6 @@ const PaymentOptions: FC<DataType> = ({ type, userId }) => {
     }
   };
 
-  // const handleFileChange = (event: any) => {
-  //   const file = event.target.files;
-  //   const filesdata = event.target.files[0];
-  //   if (file) {
-  //     if (filesdata?.size <= MAX_IMAGE_SIZE_BYTES) {
-  //       const objectURL = URL.createObjectURL(file[0]);
-  //       setfileImage(objectURL);
-  //       setFilePath(file);
-  //     } else {
-  //       Swal.fire({
-  //         icon: "error",
-  //         title: "File Size",
-  //         text: "Image size exceeds 10MB limit",
-  //       });
-
-  //       event.target.value = null;
-  //     }
-  //   } else {
-  //     setFilePath([]);
-  //   }
-  // };
-
-  // const handleClick = () => {
-  //   if (fileInputRef.current) {
-  //     fileInputRef.current.click();
-  //   }
-  // };
-
-  // const handleFileDrop = (e: any) => {
-  //   e.preventDefault();
-  //   const files = e.dataTransfer.files;
-  //   if (files) {
-  //     setFilePath(files[0]);
-  //   } else {
-  //     setFilePath([]);
-  //   }
-  // };
   return (
     <div className="mt-6">
       <Card className={`p-5 ${Styles.cardShadow}`}>
@@ -626,12 +562,7 @@ const PaymentOptions: FC<DataType> = ({ type, userId }) => {
                   height: "20px",
                 }}
               >
-                {/* <Image
-                  src={FooterpPayment}
-                  alt="payment"
-                  width={190}
-                  height={10}
-                /> */}
+
                 {logoimages?.map((res, index) => (
                   <Image
                     key={index}
@@ -765,37 +696,6 @@ const PaymentOptions: FC<DataType> = ({ type, userId }) => {
               </div>
               <div style={{ padding: "10px" }}>
                 <div className="grid grid-cols-12 gap-4 ">
-                  {/* <div className="  md:col-span-6 col-span-12">
-                    <CustomTextField
-                      labeltext="Customer ID"
-                      type="text"
-                      name="Customer ID"
-                      placeholder="Customer ID"
-                      required={true}
-                      value={formData.customer_id || customer_id}
-                      onChange={handleInputChange("customer_id")}
-                    />
-                    {errorMessage && !card_holder_name && (
-                      <p className="text-red-600">Please Enter Customer ID</p>
-                    )}
-                  </div> */}
-                  {/* <div className="    md:col-span-6 col-span-12">
-                    <CustomTextField
-                      labeltext="Reservation_code"
-                      type="text"
-                      name="reservation_code"
-                      placeholder="reservation_code"
-                      required={true}
-                      value={formData.reservation_code || reservation_code}
-                      onChange={handleInputChange("reservation_code")}
-                    />
-                    {errorMessage && !reservation_code && (
-                      <p className="text-red-600">
-                        Please Enter reservation code number
-                      </p>
-                    )}
-                  </div> */}
-
                   <div className="    md:col-span-6 col-span-12">
                     <CustomTextField
                       labeltext="authorized_amount"
@@ -829,37 +729,6 @@ const PaymentOptions: FC<DataType> = ({ type, userId }) => {
                       </p>
                     )}
                   </div>
-
-                  {/* <div className="   md:col-span-6 col-span-12">
-                    <CustomTextField
-                      labeltext="contact_email"
-                      type="email"
-                      name="contact_email"
-                      placeholder="contact_email"
-                      required={true}
-                      value={formData.contact_email || contact_email}
-                      onChange={handleInputChange("contact_email")}
-                    />
-                    {errorMessage && !contact_email && (
-                      <p className="text-red-600">Please Enter Contact Email</p>
-                    )}
-                  </div>
-                  <div className="   md:col-span-6 col-span-12">
-                    <CustomTextField
-                      labeltext="contact_phone"
-                      type="text"
-                      name="contact_phone"
-                      placeholder="contact_phone"
-                      required={true}
-                      value={formData.contact_phone || contact_phone}
-                      onChange={handleInputChange("contact_phone")}
-                    />
-                    {errorMessage && !contact_phone && (
-                      <p className="text-red-600">
-                        Please Enter Contact Number
-                      </p>
-                    )}
-                  </div> */}
                   <div className="    md:col-span-6 col-span-12">
                     <CustomTextField
                       labeltext="Address 1"
@@ -944,81 +813,9 @@ const PaymentOptions: FC<DataType> = ({ type, userId }) => {
                       <p className="text-red-600">Please Enter state name</p>
                     )}
                   </div>
-
-                  {/* <div className="md:col-span-12 col-span-12">
-                    <div>
-                      <label className="text-[15px] flex gap-[5px] my-[5px] leading-[18.05px] font-bold">
-                        Driving Licence{" "}
-                        <span className="text-red-600  text-[19px]">*</span>
-                      </label>
-                      <div className="grid grid-cols-2 gap-2 mt-2">
-                        <div
-                          className=" md:col-span-1 sm:col-span-2 rounded-md border-dashed border-black border-2 mb-3 p-20 text-center"
-                          onDrop={handleFileDrop}
-                          onDragOver={(e) => e.preventDefault()}
-                          onClick={() => handleClick()}
-                        >
-                          <p>Drag & Drop files here or click to select</p>
-                          <p className="text-[12px]">
-                            *We recommend using blow 10Mb for high-quality
-                            photos.*
-                          </p>
-                          <input
-                            type="file"
-                            id="fileInput"
-                            ref={fileInputRef}
-                            onChange={handleFileChange}
-                            style={{ display: "none" }}
-                          />
-                        </div>
-
-                        <div className="md:col-span-1 sm:col-span-2">
-                          {fileImage && (
-                            <>
-                              <p className="font-bold">Preview:</p>
-                              <Image
-                                src={fileImage}
-                                alt="Selected File"
-                                width={300}
-                                height={500}
-                              />
-                            </>
-                          )}
-                        </div>
-                      </div>
-                    </div
-                  </div> */}
                 </div>
               </div>
             </div>
-
-            {/* <div>
-              <label className="text-[15px] flex gap-[5px] my-[5px] leading-[18.05px] font-bold">
-                Signature
-              </label>
-              <SignaturePad onSave={handleSave} />
-            </div> */}
-            {/* <div className="  md:col-span-6 col-span-12 mt-6 mb-3">
-              <CustomTextField
-                labeltext="Card Holder Signature (Click on other Signature options to type Sign): 
-                "
-                type="text"
-                name="signatureText"
-                placeholder="Enter Signature"
-                value={formData.signatureText || signatureText}
-                onChange={handleInputChange("signatureText")}
-              />
-              {errorMessage && !signatureText && (
-                <p className="text-red-600">Please Enter signatureText</p>
-              )}
-            </div> */}
-            {/* <p>
-              <b>Note:</b> The airline may need certain papers from us for
-              security and authentication reasons. If these papers are not
-              submitted, the reservation may be automatically canceled. Any
-              modifications or cancellations after the trip has been paid for
-              may incur fees.
-            </p> */}
 
             <div className="mt-6 mb-6">
               <h1 style={{ color: "red" }}>
@@ -1091,13 +888,6 @@ const PaymentOptions: FC<DataType> = ({ type, userId }) => {
                   Please accept terms and conditions
                 </p>
               )}
-
-              {/* <CustomButton
-        text="Submit and Book"
-        fullWidth="true"
-        customclass={`w-[100%] mt-5`}
-        colored={"true"}
-      /> */}
             </div>
             <div>
               <button
@@ -1133,7 +923,6 @@ const PaymentOptions: FC<DataType> = ({ type, userId }) => {
           </>
         )}
       </Card>
-      {/* <Toaster /> */}
     </div>
   );
 };

@@ -34,13 +34,6 @@ export default function Departtimeradio() {
       });
     }
     router.push(newUrl, { scroll: false });
-    // ModifySearchStore({
-    //   modifyStatus: true,
-    //   departureTime: Departtime,
-    // });
-    // setTimeout(() => {
-
-    // }, 5000);
   };
   const HandleSearching = () => {
     window.scroll(0, 500);

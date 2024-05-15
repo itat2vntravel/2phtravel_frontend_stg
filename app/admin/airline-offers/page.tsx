@@ -32,7 +32,7 @@ const HeroSectionPage: React.FC<BannerSearchProps> = async ({
     return redirect("/");
   }
   const Alldata = await BannerApi();
-  const Filtereddata = Alldata?.filter((res: any) => res.page === "airline");
+  const Filtereddata = Alldata?.filter((res: any) => res.page === "airline-offers");
   const data = Filtereddata?.sort(
     (a: { banner_id: number }, b: { banner_id: number }) =>
       a.banner_id - b.banner_id

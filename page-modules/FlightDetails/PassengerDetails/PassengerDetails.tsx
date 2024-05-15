@@ -49,9 +49,7 @@ const CustomTextField: FC<CustomTextFieldProps> = ({
             type={type}
             name={name}
             autoComplete="off"
-            // className="bg-white mb-4 rounded-lg p-3 focus:outline-none border border-gray-500"
             placeholder={placeholder}
-            // required={required}
             value={value} // Set value prop
             onChange={onChange} // Set onChange prop
             className={`w-full bg-[#F4F4F4]  rounded-[5px] p-3 focus:outline-none border border-[#DADADA] h-[50px]  `}
@@ -60,9 +58,6 @@ const CustomTextField: FC<CustomTextFieldProps> = ({
               position: "relative",
               padding: "10px",
             }}
-
-            // placeholder={"Cardholder name"}
-            // required
           />
         </div>
         {errorMessage && !value && labeltext !== "Middle Name" && (
@@ -82,9 +77,6 @@ const PassengerDetails: FC<PassengerDetailsprops> = ({
   const searchParams = useSearchParams();
   const errorMessage = searchParams.get("errorMessage");
   const [SingleDatevalue, setSingleDateValue] = useState<DateValueType[]>([]);
-  // const handleSingleValueChange = (newValue: any) => {
-  //   setSingleDateValue(newValue);
-  // };
   const handleSingleValueChange = (
     newValue: any,
     category: string,
@@ -132,8 +124,6 @@ const PassengerDetails: FC<PassengerDetailsprops> = ({
           : category === "children"
           ? "child"
           : "infant";
-      // const passengerIndex =
-      //   category === "adults" ? i - 1 : i + adults - 1 + childrenCount - 1;
       const passengerIndex =
         category === "adults"
           ? i - 1

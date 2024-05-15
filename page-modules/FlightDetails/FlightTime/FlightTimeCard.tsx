@@ -22,11 +22,10 @@ const FlightTimeCard: FC<FlightCardProps> = async ({
         <div className="flex items-center">
           <div className="items-center text-[#3966AF]  mx-5">
             <RiFlightTakeoffLine size={30} />
-            {/* <p className="text-[#3966AF]">Duration: {duration} mins</p> */}
+
           </div>
         </div>
         <div className="flex flex-col items-center">
-          {/* <h1 className="text-lg font-semibold">7:45 pm</h1> */}
           <h2 className="text-[#3966AF] uppercase">{destinationAirport} </h2>
           <h2 className="text-[#3966AF] uppercase">International Airport</h2>
         </div>

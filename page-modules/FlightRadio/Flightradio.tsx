@@ -34,11 +34,6 @@ export default function Flightradio() {
       });
     }
     router.push(newUrl, { scroll: false });
-    // setTimeout(() => {
-    //   ModifySearchStore({
-    //     modifyStatus: true,
-    //   });
-    // }, 5000);
   };
   return (
     <>

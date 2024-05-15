@@ -79,12 +79,9 @@ const DestinationCityActionComple: React.FC<InputProps> = ({
         placeholder={placeholder}
         autoComplete="off"
         style={{
-          // borderRadius: "20px",
-          // border: "none",
           paddingTop: "20px",
           position: "relative",
           padding: "10px",
-          // width: matches ? "100%" : "215px",
         }}
         name={name}
         value={inputValue}
@@ -112,20 +109,12 @@ const DestinationCityActionComple: React.FC<InputProps> = ({
                         : item.city}
                       ,
                     </p>
-                    {/* <p className="text-[14px]">{item.CityName}</p>, */}
                     <p className="text-[14px]">{item.country}</p>,
-                    {/* <p className="text-[14px]">[{item.dst}]</p>, */}
-                    {/* <p className="text-[14px]">{item.city}</p>, */}
-                    {/* <p className="text-[14px]">{item.region_name}</p>, */}
-                    {/* <p className="text-[14px]">[{airport.tz}]</p>, */}
                     <p className="text-[14px]">[{item.iata}]</p>,
                     <p className="text-[12px]">{item.name}</p>
                   </div>
                 </div>
-                {/* <div className="col-span-3">[{airport.iata}]</div> */}
               </div>
-              {/*              
-              ,{airport.country},[{airport.iata}] */}
             </li>
           ))}
         </ul>

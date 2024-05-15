@@ -16,7 +16,7 @@ export default async function Updatebanner(id: any, formData: FormData) {
       }
     );
     revalidatePath("/admin/homebanner");
-    revalidatePath("/admin/airline");
+    revalidatePath("/admin/airline-offers");
     return response.data;
   } catch (error) {
     console.error("error", error);
